@@ -28,7 +28,9 @@ mixin _$BookItem {
   List<Chapter>? get catalog => throw _privateConstructorUsedError;
   bool get isFav => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookItemCopyWith<BookItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +64,8 @@ class _$BookItemCopyWithImpl<$Res, $Val extends BookItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -156,6 +160,8 @@ class __$$BookItemImplCopyWithImpl<$Res>
       _$BookItemImpl _value, $Res Function(_$BookItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -311,7 +317,9 @@ class _$BookItemImpl extends _BookItem {
       const DeepCollectionEquality().hash(_catalog),
       isFav);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookItemImplCopyWith<_$BookItemImpl> get copyWith =>
@@ -355,8 +363,11 @@ abstract class _BookItem extends BookItem {
   List<Chapter>? get catalog;
   @override
   bool get isFav;
+
+  /// Create a copy of BookItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookItemImplCopyWith<_$BookItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

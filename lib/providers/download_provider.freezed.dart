@@ -21,7 +21,9 @@ mixin _$BookDownloader {
   int get cachedNum => throw _privateConstructorUsedError;
   bool get canDownload => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookDownloader
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BookDownloaderCopyWith<BookDownloader> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -46,6 +48,8 @@ class _$BookDownloaderCopyWithImpl<$Res, $Val extends BookDownloader>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BookDownloader
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,6 +99,8 @@ class __$$BookDownloaderImplCopyWithImpl<$Res>
       _$BookDownloaderImpl _value, $Res Function(_$BookDownloaderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookDownloader
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -168,7 +174,9 @@ class _$BookDownloaderImpl extends _BookDownloader {
   int get hashCode =>
       Object.hash(runtimeType, aid, status, cachedNum, canDownload);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookDownloader
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BookDownloaderImplCopyWith<_$BookDownloaderImpl> get copyWith =>
@@ -192,8 +200,11 @@ abstract class _BookDownloader extends BookDownloader {
   int get cachedNum;
   @override
   bool get canDownload;
+
+  /// Create a copy of BookDownloader
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BookDownloaderImplCopyWith<_$BookDownloaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

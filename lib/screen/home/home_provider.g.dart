@@ -79,7 +79,7 @@ const BookItemSchema = CollectionSchema(
   getId: _bookItemGetId,
   getLinks: _bookItemGetLinks,
   attach: _bookItemAttach,
-  version: '3.1.0+1',
+  version: '3.1.8',
 );
 
 int _bookItemEstimateSize(

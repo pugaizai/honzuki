@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:honzuki/http/api.dart';
@@ -49,16 +48,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-            child: SvgPicture.asset(
-              "assets/svg/il_page_login.svg",
-              width: MediaQuery.of(context).size.width,
-            ),
-          ),
           Expanded(
               child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 128),
             child: ListView(
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -68,7 +60,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       text: "轻小说文库",
                       style: TextStyle(
                           color: colorScheme.secondary,
-                          fontSize: 23,
+                          fontSize: 24,
                           fontWeight: FontWeight.bold)),
                   const TextSpan(
                       text: "\n \n", style: TextStyle(fontSize: 1, height: 6)),
@@ -76,7 +68,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       text: "www.wenku8.net",
                       style: TextStyle(
                           color: colorScheme.secondary.withOpacity(0.5),
-                          fontSize: 15,
+                          fontSize: 16,
                           fontWeight: FontWeight.normal))
                 ])),
                 Padding(
@@ -138,7 +130,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           });
                         },
                         child: Text(
-                          "登陆",
+                          "登录",
                           style: TextStyle(
                               color: Theme.of(context).colorScheme.onPrimary),
                         ))),

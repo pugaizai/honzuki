@@ -20,7 +20,9 @@ mixin _$Rank {
   List<BookItem> get books => throw _privateConstructorUsedError;
   int get subIndex => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Rank
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RankCopyWith<Rank> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -42,6 +44,8 @@ class _$RankCopyWithImpl<$Res, $Val extends Rank>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Rank
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,6 +87,8 @@ class __$$RankImplCopyWithImpl<$Res>
   __$$RankImplCopyWithImpl(_$RankImpl _value, $Res Function(_$RankImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Rank
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,7 +158,9 @@ class _$RankImpl extends _Rank {
   int get hashCode => Object.hash(
       runtimeType, flag, const DeepCollectionEquality().hash(_books), subIndex);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Rank
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RankImplCopyWith<_$RankImpl> get copyWith =>
@@ -172,8 +180,11 @@ abstract class _Rank extends Rank {
   List<BookItem> get books;
   @override
   int get subIndex;
+
+  /// Create a copy of Rank
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RankImplCopyWith<_$RankImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

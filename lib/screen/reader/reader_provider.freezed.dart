@@ -23,8 +23,12 @@ mixin _$Chapter {
   String get cid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
+  /// Serializes this Chapter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Chapter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ChapterCopyWith<Chapter> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -46,6 +50,8 @@ class _$ChapterCopyWithImpl<$Res, $Val extends Chapter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Chapter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,6 +89,8 @@ class __$$ChapterImplCopyWithImpl<$Res>
       _$ChapterImpl _value, $Res Function(_$ChapterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Chapter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,11 +146,13 @@ class _$ChapterImpl with DiagnosticableTreeMixin implements _Chapter {
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cid, name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Chapter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChapterImplCopyWith<_$ChapterImpl> get copyWith =>
@@ -166,8 +176,11 @@ abstract class _Chapter implements Chapter {
   String get cid;
   @override
   String get name;
+
+  /// Create a copy of Chapter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChapterImplCopyWith<_$ChapterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -183,7 +196,9 @@ mixin _$ReaderMenuState {
   bool get progressVisible => throw _privateConstructorUsedError;
   double get bottomBarHeight => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ReaderMenuState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReaderMenuStateCopyWith<ReaderMenuState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -215,6 +230,8 @@ class _$ReaderMenuStateCopyWithImpl<$Res, $Val extends ReaderMenuState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ReaderMenuState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -291,6 +308,8 @@ class __$$ReaderMenuStateImplCopyWithImpl<$Res>
       _$ReaderMenuStateImpl _value, $Res Function(_$ReaderMenuStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ReaderMenuState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -435,7 +454,9 @@ class _$ReaderMenuStateImpl extends _ReaderMenuState
       progressVisible,
       bottomBarHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ReaderMenuState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReaderMenuStateImplCopyWith<_$ReaderMenuStateImpl> get copyWith =>
@@ -471,8 +492,11 @@ abstract class _ReaderMenuState extends ReaderMenuState {
   bool get progressVisible;
   @override
   double get bottomBarHeight;
+
+  /// Create a copy of ReaderMenuState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReaderMenuStateImplCopyWith<_$ReaderMenuStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -489,7 +513,9 @@ mixin _$Reader {
   String get cachedText => throw _privateConstructorUsedError;
   ReaderConfig get config => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Reader
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReaderCopyWith<Reader> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -522,6 +548,8 @@ class _$ReaderCopyWithImpl<$Res, $Val extends Reader>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Reader
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -575,6 +603,8 @@ class _$ReaderCopyWithImpl<$Res, $Val extends Reader>
     ) as $Val);
   }
 
+  /// Create a copy of Reader
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ReaderConfigCopyWith<$Res> get config {
@@ -614,6 +644,8 @@ class __$$ReaderImplCopyWithImpl<$Res>
       _$ReaderImpl _value, $Res Function(_$ReaderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Reader
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -775,7 +807,9 @@ class _$ReaderImpl extends _Reader with DiagnosticableTreeMixin {
       cachedText,
       config);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Reader
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReaderImplCopyWith<_$ReaderImpl> get copyWith =>
@@ -813,8 +847,11 @@ abstract class _Reader extends Reader {
   String get cachedText;
   @override
   ReaderConfig get config;
+
+  /// Create a copy of Reader
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReaderImplCopyWith<_$ReaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -825,7 +862,9 @@ mixin _$ReaderTheme {
   String get id => throw _privateConstructorUsedError;
   ThemeData get theme => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ReaderTheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReaderThemeCopyWith<ReaderTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -849,6 +888,8 @@ class _$ReaderThemeCopyWithImpl<$Res, $Val extends ReaderTheme>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ReaderTheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -892,6 +933,8 @@ class __$$ReaderThemeImplCopyWithImpl<$Res>
       _$ReaderThemeImpl _value, $Res Function(_$ReaderThemeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ReaderTheme
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -957,7 +1000,9 @@ class _$ReaderThemeImpl with DiagnosticableTreeMixin implements _ReaderTheme {
   @override
   int get hashCode => Object.hash(runtimeType, name, id, theme);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ReaderTheme
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReaderThemeImplCopyWith<_$ReaderThemeImpl> get copyWith =>
@@ -976,8 +1021,11 @@ abstract class _ReaderTheme implements ReaderTheme {
   String get id;
   @override
   ThemeData get theme;
+
+  /// Create a copy of ReaderTheme
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReaderThemeImplCopyWith<_$ReaderThemeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -993,7 +1041,9 @@ mixin _$ReaderConfig {
   bool get fullScreen => throw _privateConstructorUsedError; // 全屏显示
   bool get keepScreenOn => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ReaderConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReaderConfigCopyWith<ReaderConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1025,6 +1075,8 @@ class _$ReaderConfigCopyWithImpl<$Res, $Val extends ReaderConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ReaderConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1101,6 +1153,8 @@ class __$$ReaderConfigImplCopyWithImpl<$Res>
       _$ReaderConfigImpl _value, $Res Function(_$ReaderConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ReaderConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1250,7 +1304,9 @@ class _$ReaderConfigImpl with DiagnosticableTreeMixin implements _ReaderConfig {
       fullScreen,
       keepScreenOn);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ReaderConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReaderConfigImplCopyWith<_$ReaderConfigImpl> get copyWith =>
@@ -1269,23 +1325,26 @@ abstract class _ReaderConfig implements ReaderConfig {
       final bool keepScreenOn}) = _$ReaderConfigImpl;
 
   @override
-  bool get horizontalScroll;
-  @override // 平移翻页
-  bool get verticalScroll;
-  @override // 滚动翻页
-  bool get flickScroll;
-  @override // 静止翻页
-  bool get simulationScroll;
-  @override // 仿真翻页
-  bool get buttonScroll;
-  @override // 音量键翻页
-  bool get globalNext;
-  @override // 全局下一页
-  bool get fullScreen;
-  @override // 全屏显示
-  bool get keepScreenOn;
+  bool get horizontalScroll; // 平移翻页
   @override
-  @JsonKey(ignore: true)
+  bool get verticalScroll; // 滚动翻页
+  @override
+  bool get flickScroll; // 静止翻页
+  @override
+  bool get simulationScroll; // 仿真翻页
+  @override
+  bool get buttonScroll; // 音量键翻页
+  @override
+  bool get globalNext; // 全局下一页
+  @override
+  bool get fullScreen; // 全屏显示
+  @override
+  bool get keepScreenOn;
+
+  /// Create a copy of ReaderConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReaderConfigImplCopyWith<_$ReaderConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1299,8 +1358,12 @@ mixin _$RecordMeta {
   int get cIndex => throw _privateConstructorUsedError;
   int get pIndex => throw _privateConstructorUsedError;
 
+  /// Serializes this RecordMeta to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RecordMeta
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RecordMetaCopyWith<RecordMeta> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1324,6 +1387,8 @@ class _$RecordMetaCopyWithImpl<$Res, $Val extends RecordMeta>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RecordMeta
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1362,6 +1427,8 @@ class __$$RecordMetaImplCopyWithImpl<$Res>
       _$RecordMetaImpl _value, $Res Function(_$RecordMetaImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RecordMeta
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1419,11 +1486,13 @@ class _$RecordMetaImpl with DiagnosticableTreeMixin implements _RecordMeta {
             (identical(other.pIndex, pIndex) || other.pIndex == pIndex));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cIndex, pIndex);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RecordMeta
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RecordMetaImplCopyWith<_$RecordMetaImpl> get copyWith =>
@@ -1448,8 +1517,11 @@ abstract class _RecordMeta implements RecordMeta {
   int get cIndex;
   @override
   int get pIndex;
+
+  /// Create a copy of RecordMeta
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RecordMetaImplCopyWith<_$RecordMetaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

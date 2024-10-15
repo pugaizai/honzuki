@@ -20,7 +20,9 @@ mixin _$ChapterProgress {
   int get totalPages => throw _privateConstructorUsedError; // 章节总页数
   int get currentIndex => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChapterProgress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ChapterProgressCopyWith<ChapterProgress> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -44,6 +46,8 @@ class _$ChapterProgressCopyWithImpl<$Res, $Val extends ChapterProgress>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ChapterProgress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +91,8 @@ class __$$ChapterProgressImplCopyWithImpl<$Res>
       _$ChapterProgressImpl _value, $Res Function(_$ChapterProgressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChapterProgress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,7 +157,9 @@ class _$ChapterProgressImpl extends _ChapterProgress {
   int get hashCode =>
       Object.hash(runtimeType, chapterIndex, totalPages, currentIndex);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChapterProgress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChapterProgressImplCopyWith<_$ChapterProgressImpl> get copyWith =>
@@ -167,13 +175,16 @@ abstract class _ChapterProgress extends ChapterProgress {
   const _ChapterProgress._() : super._();
 
   @override
-  int get chapterIndex;
-  @override // 章节索引
-  int get totalPages;
-  @override // 章节总页数
-  int get currentIndex;
+  int get chapterIndex; // 章节索引
   @override
-  @JsonKey(ignore: true)
+  int get totalPages; // 章节总页数
+  @override
+  int get currentIndex;
+
+  /// Create a copy of ChapterProgress
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChapterProgressImplCopyWith<_$ChapterProgressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

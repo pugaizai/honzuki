@@ -92,7 +92,7 @@ BEGIN
             VALUE "CompanyName", "life.pugai" "\0"
             VALUE "FileDescription", "honzuki" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "honzuki" "\0"
+            VALUE "InternalName", "life.pugai.honzuki" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 life.pugai. All rights reserved." "\0"
             VALUE "OriginalFilename", "honzuki.exe" "\0"
             VALUE "ProductName", "honzuki" "\0"

@@ -1,4 +1,4 @@
-package cc.zsakvo.wenku8x
+package life.pugai.honzuki
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -21,7 +21,9 @@ mixin _$Search {
   List<String> get authors => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Search
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchCopyWith<Search> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -47,6 +49,8 @@ class _$SearchCopyWithImpl<$Res, $Val extends Search>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Search
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +102,8 @@ class __$$SearchImplCopyWithImpl<$Res>
       _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Search
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -185,7 +191,9 @@ class _$SearchImpl extends _Search {
       const DeepCollectionEquality().hash(_authors),
       error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Search
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
@@ -208,8 +216,11 @@ abstract class _Search extends Search {
   List<String> get authors;
   @override
   String? get error;
+
+  /// Create a copy of Search
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

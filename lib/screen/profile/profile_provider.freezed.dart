@@ -25,7 +25,9 @@ mixin _$Config {
   bool get zhHant => throw _privateConstructorUsedError;
   String get customAvataar => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Config
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConfigCopyWith<Config> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -55,6 +57,8 @@ class _$ConfigCopyWithImpl<$Res, $Val extends Config>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Config
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,6 +134,8 @@ class __$$ConfigImplCopyWithImpl<$Res>
       _$ConfigImpl _value, $Res Function(_$ConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Config
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -249,7 +255,9 @@ class _$ConfigImpl extends _Config {
   int get hashCode => Object.hash(runtimeType, autoDarkMode, isDarkMode,
       dynamicColor, colorSeed, fixedSequence, showImage, zhHant, customAvataar);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Config
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigImplCopyWith<_$ConfigImpl> get copyWith =>
@@ -284,8 +292,11 @@ abstract class _Config extends Config {
   bool get zhHant;
   @override
   String get customAvataar;
+
+  /// Create a copy of Config
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConfigImplCopyWith<_$ConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -297,7 +308,9 @@ mixin _$UserInfo {
   int? get score => throw _privateConstructorUsedError;
   String? get rank => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserInfoCopyWith<UserInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -320,6 +333,8 @@ class _$UserInfoCopyWithImpl<$Res, $Val extends UserInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -368,6 +383,8 @@ class __$$UserInfoImplCopyWithImpl<$Res>
       _$UserInfoImpl _value, $Res Function(_$UserInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -432,7 +449,9 @@ class _$UserInfoImpl extends _UserInfo {
   @override
   int get hashCode => Object.hash(runtimeType, uname, nickname, score, rank);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserInfoImplCopyWith<_$UserInfoImpl> get copyWith =>
@@ -455,8 +474,11 @@ abstract class _UserInfo extends UserInfo {
   int? get score;
   @override
   String? get rank;
+
+  /// Create a copy of UserInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserInfoImplCopyWith<_$UserInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
