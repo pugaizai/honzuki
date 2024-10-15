@@ -3,6 +3,7 @@ import 'package:honzuki/http/api.dart';
 import 'package:honzuki/screen/home/home_provider.dart';
 import 'package:honzuki/screen/reader/reader_provider.dart';
 import 'package:honzuki/utils/util.dart';
+import 'package:xml/xml.dart';
 
 class DetailNotifier extends AutoDisposeFamilyNotifier<BookItem, BookItem> {
   @override

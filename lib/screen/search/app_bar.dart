@@ -51,7 +51,8 @@ class _SearchAppBarState extends ConsumerState<SearchAppBar> {
                         // padding: const EdgeInsets.only(left: 12),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
-                            color: colorScheme.surfaceVariant.withOpacity(0.5)),
+                            color: colorScheme.surfaceContainerHighest
+                                .withOpacity(0.5)),
                         child: Row(
                           children: [
                             IconButton(

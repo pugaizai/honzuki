@@ -68,8 +68,8 @@ class _MenuPaletteState extends ConsumerState<MenuPalette> {
                           border: Border.all(
                               width: 0.7,
                               color: theme.theme.colorScheme.outline),
-                          color: theme.theme.colorScheme.background
-                              .withOpacity(0.5)),
+                          color:
+                              theme.theme.colorScheme.surface.withOpacity(0.5)),
                       padding: const EdgeInsets.symmetric(
                           vertical: 16, horizontal: 16),
                       child: Column(
@@ -97,7 +97,7 @@ class _MenuPaletteState extends ConsumerState<MenuPalette> {
                             Text(
                               theme.name.split("").join("\n"),
                               style: TextStyle(
-                                  color: theme.theme.colorScheme.onBackground),
+                                  color: theme.theme.colorScheme.onSurface),
                             )
                           ]),
                     ),

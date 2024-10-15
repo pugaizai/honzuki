@@ -130,9 +130,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             if (res) {
                               sp.setString("username", usernameController.text);
                               sp.setString("password", passwordController.text);
+                              // ignore: use_build_context_synchronously
                               GoRouter.of(context).go("/");
                             } else {
-                              // ignore: use_build_context_synchronously
                               Show.error("登录失败，用户名或密码错误");
                             }
                           });

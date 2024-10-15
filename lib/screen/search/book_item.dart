@@ -6,6 +6,7 @@ import 'package:honzuki/http/api.dart';
 import 'package:honzuki/screen/home/home_provider.dart';
 import 'package:honzuki/service/navigation.dart';
 import 'package:honzuki/utils/util.dart';
+import 'package:xml/xml.dart';
 
 class BookItemComp extends StatefulHookConsumerWidget {
   const BookItemComp(this.aid, {super.key, this.onItemTap});
@@ -45,7 +46,7 @@ class _BookItemCompState extends ConsumerState<BookItemComp>
               margin: const EdgeInsets.only(right: 16),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
-                  color: getColorScheme(context).surfaceVariant),
+                  color: getColorScheme(context).surfaceContainerHighest),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: CachedNetworkImage(
