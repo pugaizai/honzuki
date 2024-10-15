@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_color_utilities/material_color_utilities.dart';
-import 'package:wenku8x/extension/int.dart';
-import 'package:wenku8x/extension/string.dart';
+import 'package:honzuki/extension/int.dart';
+import 'package:honzuki/extension/string.dart';
 
 String parseDynamicColor(String svgString,
     {required int primaryColor, bool isDarkTheme = false}) {

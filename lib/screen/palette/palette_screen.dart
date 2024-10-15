@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/palette/palette_provider.dart';
-import 'package:wenku8x/screen/palette/selectable_palette.dart';
-import 'package:wenku8x/screen/profile/profile_provider.dart';
-import 'package:wenku8x/theme/extend.dart';
-import 'package:wenku8x/utils/palette.dart';
+import 'package:honzuki/screen/palette/palette_provider.dart';
+import 'package:honzuki/screen/palette/selectable_palette.dart';
+import 'package:honzuki/screen/profile/profile_provider.dart';
+import 'package:honzuki/theme/extend.dart';
+import 'package:honzuki/utils/palette.dart';
 
 import 'svg.dart';
 
@@ -63,7 +63,7 @@ class _PaletteScreenState extends ConsumerState<PaletteScreen> {
                 style: TextStyle(
                     fontSize: 34,
                     fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.onBackground),
+                    color: Theme.of(context).colorScheme.onSurface),
               )),
             ),
             SliverToBoxAdapter(

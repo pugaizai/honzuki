@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:wenku8x/utils/log.dart';
+import 'package:honzuki/utils/log.dart';
 
 class ScrollReader extends StatefulHookConsumerWidget {
   const ScrollReader(this.pages, this.controller,

@@ -12,7 +12,7 @@ part of 'download_provider.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BookDownloader {
@@ -76,11 +76,11 @@ class _$BookDownloaderCopyWithImpl<$Res, $Val extends BookDownloader>
 }
 
 /// @nodoc
-abstract class _$$_BookDownloaderCopyWith<$Res>
+abstract class _$$BookDownloaderImplCopyWith<$Res>
     implements $BookDownloaderCopyWith<$Res> {
-  factory _$$_BookDownloaderCopyWith(
-          _$_BookDownloader value, $Res Function(_$_BookDownloader) then) =
-      __$$_BookDownloaderCopyWithImpl<$Res>;
+  factory _$$BookDownloaderImplCopyWith(_$BookDownloaderImpl value,
+          $Res Function(_$BookDownloaderImpl) then) =
+      __$$BookDownloaderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -88,11 +88,11 @@ abstract class _$$_BookDownloaderCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BookDownloaderCopyWithImpl<$Res>
-    extends _$BookDownloaderCopyWithImpl<$Res, _$_BookDownloader>
-    implements _$$_BookDownloaderCopyWith<$Res> {
-  __$$_BookDownloaderCopyWithImpl(
-      _$_BookDownloader _value, $Res Function(_$_BookDownloader) _then)
+class __$$BookDownloaderImplCopyWithImpl<$Res>
+    extends _$BookDownloaderCopyWithImpl<$Res, _$BookDownloaderImpl>
+    implements _$$BookDownloaderImplCopyWith<$Res> {
+  __$$BookDownloaderImplCopyWithImpl(
+      _$BookDownloaderImpl _value, $Res Function(_$BookDownloaderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -103,7 +103,7 @@ class __$$_BookDownloaderCopyWithImpl<$Res>
     Object? cachedNum = null,
     Object? canDownload = null,
   }) {
-    return _then(_$_BookDownloader(
+    return _then(_$BookDownloaderImpl(
       aid: null == aid
           ? _value.aid
           : aid // ignore: cast_nullable_to_non_nullable
@@ -126,8 +126,8 @@ class __$$_BookDownloaderCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BookDownloader extends _BookDownloader {
-  const _$_BookDownloader(
+class _$BookDownloaderImpl extends _BookDownloader {
+  const _$BookDownloaderImpl(
       {required this.aid,
       this.status = BookDownloadStatus.none,
       this.cachedNum = 0,
@@ -152,10 +152,10 @@ class _$_BookDownloader extends _BookDownloader {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BookDownloader &&
+            other is _$BookDownloaderImpl &&
             (identical(other.aid, aid) || other.aid == aid) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.cachedNum, cachedNum) ||
@@ -171,8 +171,9 @@ class _$_BookDownloader extends _BookDownloader {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BookDownloaderCopyWith<_$_BookDownloader> get copyWith =>
-      __$$_BookDownloaderCopyWithImpl<_$_BookDownloader>(this, _$identity);
+  _$$BookDownloaderImplCopyWith<_$BookDownloaderImpl> get copyWith =>
+      __$$BookDownloaderImplCopyWithImpl<_$BookDownloaderImpl>(
+          this, _$identity);
 }
 
 abstract class _BookDownloader extends BookDownloader {
@@ -180,7 +181,7 @@ abstract class _BookDownloader extends BookDownloader {
       {required final String aid,
       final BookDownloadStatus status,
       final int cachedNum,
-      final bool canDownload}) = _$_BookDownloader;
+      final bool canDownload}) = _$BookDownloaderImpl;
   const _BookDownloader._() : super._();
 
   @override
@@ -193,6 +194,6 @@ abstract class _BookDownloader extends BookDownloader {
   bool get canDownload;
   @override
   @JsonKey(ignore: true)
-  _$$_BookDownloaderCopyWith<_$_BookDownloader> get copyWith =>
+  _$$BookDownloaderImplCopyWith<_$BookDownloaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

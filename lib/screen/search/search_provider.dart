@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/http/api.dart';
+import 'package:honzuki/http/api.dart';
 import 'package:xml/xml.dart';
 
 part 'search_provider.freezed.dart';

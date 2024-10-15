@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/home/home_provider.dart';
-import 'package:wenku8x/service/navigation.dart';
+import 'package:honzuki/screen/home/home_provider.dart';
+import 'package:honzuki/service/navigation.dart';
 
 class BookItemComp extends StatefulHookConsumerWidget {
   const BookItemComp(this.bookItem, {super.key, this.onItemTap});

@@ -6,17 +6,16 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/screen/profile/profile_provider.dart';
-import 'package:wenku8x/service/navigation.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/screen/profile/profile_provider.dart';
+import 'package:honzuki/service/navigation.dart';
 
 class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
   const HomeAppBar(
-      {Key? key,
+      {super.key,
       required this.onSearchTap,
       required this.onAddTap,
-      required this.onAvatarTap})
-      : super(key: key);
+      required this.onAvatarTap});
 
   final Function() onSearchTap;
   final Function() onAddTap;

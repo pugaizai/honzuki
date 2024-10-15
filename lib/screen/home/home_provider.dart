@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:wenku8x/screen/reader/reader_provider.dart';
+import 'package:honzuki/screen/reader/reader_provider.dart';
 
 import '../../http/api.dart';
 

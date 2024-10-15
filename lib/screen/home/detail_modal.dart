@@ -4,8 +4,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/providers/download_provider.dart';
-import 'package:wenku8x/screen/home/home_provider.dart';
+import 'package:honzuki/providers/download_provider.dart';
+import 'package:honzuki/screen/home/home_provider.dart';
 
 class DetailModal extends HookConsumerWidget {
   const DetailModal(this.controller, this.bookItem, {super.key});

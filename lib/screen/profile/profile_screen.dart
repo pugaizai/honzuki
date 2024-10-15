@@ -8,11 +8,11 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/screen/profile/profile_provider.dart';
-import 'package:wenku8x/screen/profile/switch_card.dart';
-import 'package:wenku8x/screen/profile/tap_card.dart';
-import 'package:wenku8x/theme/extend.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/screen/profile/profile_provider.dart';
+import 'package:honzuki/screen/profile/switch_card.dart';
+import 'package:honzuki/screen/profile/tap_card.dart';
+import 'package:honzuki/theme/extend.dart';
 
 class ProfileScreen extends StatefulHookConsumerWidget {
   const ProfileScreen({super.key});
@@ -79,7 +79,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                                       style: TextStyle(
                                           color: Theme.of(context)
                                               .colorScheme
-                                              .onBackground,
+                                              .onSurface,
                                           fontSize: 16,
                                           fontWeight: FontWeight.w600,
                                           height: 1.8),
@@ -246,7 +246,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       subtitle: "无论你有什么意见和建议，都欢迎找我聊聊。当然，这不代表一定会被实现。",
                       onTap: () {
                         launchUrl(Uri.parse(
-                            'https://github.com/zsakvo/wenku8x/issues/new'));
+                            'https://github.com/zsakvo/honzuki/issues/new'));
                       },
                       trailing: CircleAvatar(
                         backgroundColor:

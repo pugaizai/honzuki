@@ -8,8 +8,8 @@ import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 // import 'package:go_router/go_router.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:wenku8x/service/navigation.dart';
-import 'package:wenku8x/utils/flash.dart';
+// import 'package:honzuki/service/navigation.dart';
+import 'package:honzuki/utils/flash.dart';
 import 'dart:convert' as convert;
 
 import 'package:xml/xml.dart';

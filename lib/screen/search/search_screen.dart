@@ -3,8 +3,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/search/app_bar.dart';
-import 'package:wenku8x/theme/extend.dart';
+import 'package:honzuki/screen/search/app_bar.dart';
+import 'package:honzuki/theme/extend.dart';
 
 import 'book_item.dart';
 import 'search_provider.dart';

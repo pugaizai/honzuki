@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_color_utilities/material_color_utilities.dart';
-import 'package:wenku8x/screen/palette/palette_provider.dart';
-import 'package:wenku8x/screen/profile/profile_provider.dart';
+import 'package:honzuki/screen/palette/palette_provider.dart';
+import 'package:honzuki/screen/profile/profile_provider.dart';
 
 class SelectablePalette extends StatefulHookConsumerWidget {
   const SelectablePalette(

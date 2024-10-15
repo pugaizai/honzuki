@@ -5,11 +5,11 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/main.dart';
-import 'package:wenku8x/service/navigation.dart';
-import 'package:wenku8x/utils/log.dart';
-import 'package:wenku8x/utils/flash.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/main.dart';
+import 'package:honzuki/service/navigation.dart';
+import 'package:honzuki/utils/log.dart';
+import 'package:honzuki/utils/flash.dart';
 
 class LoginScreen extends StatefulHookConsumerWidget {
   const LoginScreen({super.key});

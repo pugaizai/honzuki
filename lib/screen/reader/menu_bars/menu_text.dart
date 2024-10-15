@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/main.dart';
+import 'package:honzuki/main.dart';
 
 import '../reader_provider.dart';
 
@@ -49,7 +49,7 @@ class _MenuTextState extends ConsumerState<MenuText>
                   "排版",
                   style: TextStyle(
                       fontSize: 16,
-                      color: Theme.of(context).colorScheme.onBackground,
+                      color: Theme.of(context).colorScheme.onSurface,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -71,7 +71,7 @@ class _MenuTextState extends ConsumerState<MenuText>
                           activeTrackColor:
                               Theme.of(context).colorScheme.outline,
                           inactiveTrackColor:
-                              Theme.of(context).colorScheme.background,
+                              Theme.of(context).colorScheme.surface,
                           trackHeight: 16,
                           overlayShape: SliderComponentShape.noOverlay,
                           thumbColor: Theme.of(context).colorScheme.surface,
@@ -128,7 +128,7 @@ class _MenuTextState extends ConsumerState<MenuText>
                           activeTrackColor:
                               Theme.of(context).colorScheme.outline,
                           inactiveTrackColor:
-                              Theme.of(context).colorScheme.background,
+                              Theme.of(context).colorScheme.surface,
                           trackHeight: 16,
                           overlayShape: SliderComponentShape.noOverlay,
                           thumbColor: Theme.of(context).colorScheme.surface,
@@ -187,7 +187,7 @@ class _MenuTextState extends ConsumerState<MenuText>
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30)),
                                   backgroundColor:
-                                      Theme.of(context).colorScheme.background,
+                                      Theme.of(context).colorScheme.surface,
                                   minimumSize: const Size(148, 24),
                                 ),
                                 onPressed: () {},
@@ -224,9 +224,8 @@ class _MenuTextState extends ConsumerState<MenuText>
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(30)),
-                                    backgroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .background,
+                                    backgroundColor:
+                                        Theme.of(context).colorScheme.surface,
                                     minimumSize: const Size(148, 24),
                                   ),
                                   onPressed: () {},

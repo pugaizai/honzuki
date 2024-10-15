@@ -54,7 +54,7 @@ class _MenuCatalogState extends ConsumerState<MenuCatalog>
               child: Text(
                 "目录",
                 style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground,
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontSize: 16,
                     fontWeight: FontWeight.w600),
               ),
@@ -98,7 +98,7 @@ class _MenuCatalogState extends ConsumerState<MenuCatalog>
                                               .primary
                                           : Theme.of(context)
                                               .colorScheme
-                                              .onBackground,
+                                              .onSurface,
                                       fontSize: 13),
                                 ),
                               ),

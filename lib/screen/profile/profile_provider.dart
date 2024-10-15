@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:wenku8x/main.dart';
-import 'package:wenku8x/utils/flash.dart';
+import 'package:honzuki/main.dart';
+import 'package:honzuki/utils/flash.dart';
 
 part 'profile_provider.freezed.dart';
 

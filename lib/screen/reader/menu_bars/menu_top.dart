@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/reader/reader_provider.dart';
+import 'package:honzuki/screen/reader/reader_provider.dart';
 
 class MenuTop extends StatefulHookConsumerWidget {
   const MenuTop(this.provider, {super.key});
@@ -49,7 +49,7 @@ class _MenuTopState extends ConsumerState<MenuTop>
                       },
                       icon: Icon(
                         Icons.arrow_back,
-                        color: Theme.of(context).colorScheme.onBackground,
+                        color: Theme.of(context).colorScheme.onSurface,
                       )),
                   Expanded(
                       child: Text(
@@ -58,7 +58,7 @@ class _MenuTopState extends ConsumerState<MenuTop>
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.onBackground,
+                        color: Theme.of(context).colorScheme.onSurface,
                         fontSize: 16),
                   )),
                   IconButton(onPressed: () {}, icon: const Icon(Icons.refresh)),

@@ -2,12 +2,12 @@ import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/home/add_modal.dart';
-import 'package:wenku8x/screen/home/app_bar.dart';
-import 'package:wenku8x/screen/home/detail_modal.dart';
-import 'package:wenku8x/screen/home/home_provider.dart';
-import 'package:wenku8x/theme/extend.dart';
-import 'package:wenku8x/utils/flash.dart';
+import 'package:honzuki/screen/home/add_modal.dart';
+import 'package:honzuki/screen/home/app_bar.dart';
+import 'package:honzuki/screen/home/detail_modal.dart';
+import 'package:honzuki/screen/home/home_provider.dart';
+import 'package:honzuki/theme/extend.dart';
+import 'package:honzuki/utils/flash.dart';
 
 import 'book_item.dart';
 

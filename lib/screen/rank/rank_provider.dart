@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/screen/home/home_provider.dart';
-import 'package:wenku8x/utils/util.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/screen/home/home_provider.dart';
+import 'package:honzuki/utils/util.dart';
 import 'package:xml/xml.dart';
 
 part 'rank_provider.freezed.dart';

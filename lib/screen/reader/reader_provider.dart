@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/main.dart';
-import 'package:wenku8x/screen/reader/menu_bars/progress_bar_provider.dart';
-import 'package:wenku8x/screen/reader/themes/cherry.dart';
-import 'package:wenku8x/screen/reader/themes/glacier.dart';
-import 'package:wenku8x/screen/reader/themes/mulberry.dart';
-import 'package:wenku8x/screen/reader/themes/spring.dart';
-import 'package:wenku8x/screen/reader/themes/walnut.dart';
-import 'package:wenku8x/utils/flash.dart';
-import 'package:wenku8x/utils/log.dart';
-import 'package:wenku8x/utils/render.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/main.dart';
+import 'package:honzuki/screen/reader/menu_bars/progress_bar_provider.dart';
+import 'package:honzuki/screen/reader/themes/cherry.dart';
+import 'package:honzuki/screen/reader/themes/glacier.dart';
+import 'package:honzuki/screen/reader/themes/mulberry.dart';
+import 'package:honzuki/screen/reader/themes/spring.dart';
+import 'package:honzuki/screen/reader/themes/walnut.dart';
+import 'package:honzuki/utils/flash.dart';
+import 'package:honzuki/utils/log.dart';
+import 'package:honzuki/utils/render.dart';
 
 part 'reader_provider.freezed.dart';
 part 'reader_provider.g.dart';
@@ -77,7 +77,7 @@ class Reader with _$Reader {
   }
 
   TextStyle get computedTextStyle {
-    return textStyle.copyWith(color: theme.colorScheme.onBackground);
+    return textStyle.copyWith(color: theme.colorScheme.onSurface);
   }
 }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/reader/menu_bars/progress_bar_provider.dart';
+import 'package:honzuki/screen/reader/menu_bars/progress_bar_provider.dart';
 import '../reader_provider.dart';
 
 class ProgressBar extends StatefulHookConsumerWidget {
@@ -51,8 +51,7 @@ class _ProgressBarState extends ConsumerState<ProgressBar> {
                     child: SliderTheme(
                   data: SliderTheme.of(context).copyWith(
                     activeTrackColor: Theme.of(context).colorScheme.outline,
-                    inactiveTrackColor:
-                        Theme.of(context).colorScheme.background,
+                    inactiveTrackColor: Theme.of(context).colorScheme.surface,
                     trackHeight: 16,
                     valueIndicatorColor: Colors.transparent,
                     tickMarkShape: SliderTickMarkShape.noTickMark,

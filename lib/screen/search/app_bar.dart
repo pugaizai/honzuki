@@ -4,8 +4,8 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/search/search_provider.dart';
-import 'package:wenku8x/service/navigation.dart';
+import 'package:honzuki/screen/search/search_provider.dart';
+import 'package:honzuki/service/navigation.dart';
 
 class SearchAppBar extends StatefulHookConsumerWidget
     implements PreferredSizeWidget {

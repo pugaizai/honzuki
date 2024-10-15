@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/screen/rank/book_item.dart';
-import 'package:wenku8x/screen/rank/rank_provider.dart';
-import 'package:wenku8x/screen/rank/tab_bar.dart';
-import 'package:wenku8x/theme/extend.dart';
+import 'package:honzuki/screen/rank/book_item.dart';
+import 'package:honzuki/screen/rank/rank_provider.dart';
+import 'package:honzuki/screen/rank/tab_bar.dart';
+import 'package:honzuki/theme/extend.dart';
 
 class RankScreen extends StatefulHookConsumerWidget {
   const RankScreen(this.type, {super.key});

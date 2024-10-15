@@ -10,12 +10,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:wenku8x/hooks/brightness.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/router.dart';
+import 'package:honzuki/hooks/brightness.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/router.dart';
 
-import 'package:wenku8x/screen/profile/profile_provider.dart';
-import 'package:wenku8x/theme/extend.dart';
+import 'package:honzuki/screen/profile/profile_provider.dart';
+import 'package:honzuki/theme/extend.dart';
 
 import 'http/ajax.dart';
 

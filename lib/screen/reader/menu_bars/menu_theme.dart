@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/main.dart';
-import 'package:wenku8x/screen/reader/reader_provider.dart';
+import 'package:honzuki/main.dart';
+import 'package:honzuki/screen/reader/reader_provider.dart';
 
 class MenuPalette extends StatefulHookConsumerWidget {
   const MenuPalette(this.provider, {super.key});
@@ -46,7 +46,7 @@ class _MenuPaletteState extends ConsumerState<MenuPalette> {
                 "主题",
                 style: TextStyle(
                     fontSize: 16,
-                    color: Theme.of(context).colorScheme.onBackground,
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontWeight: FontWeight.bold),
               ),
             ),

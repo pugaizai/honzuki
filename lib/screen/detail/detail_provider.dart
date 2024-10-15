@@ -1,9 +1,8 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/screen/home/home_provider.dart';
-import 'package:wenku8x/screen/reader/reader_provider.dart';
-import 'package:wenku8x/utils/util.dart';
-import 'package:xml/xml.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/screen/home/home_provider.dart';
+import 'package:honzuki/screen/reader/reader_provider.dart';
+import 'package:honzuki/utils/util.dart';
 
 class DetailNotifier extends AutoDisposeFamilyNotifier<BookItem, BookItem> {
   @override

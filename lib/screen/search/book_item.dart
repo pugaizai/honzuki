@@ -2,11 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:wenku8x/http/api.dart';
-import 'package:wenku8x/screen/home/home_provider.dart';
-import 'package:wenku8x/service/navigation.dart';
-import 'package:wenku8x/utils/util.dart';
-import 'package:xml/xml.dart';
+import 'package:honzuki/http/api.dart';
+import 'package:honzuki/screen/home/home_provider.dart';
+import 'package:honzuki/service/navigation.dart';
+import 'package:honzuki/utils/util.dart';
 
 class BookItemComp extends StatefulHookConsumerWidget {
   const BookItemComp(this.aid, {super.key, this.onItemTap});

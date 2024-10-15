@@ -1,11 +1,11 @@
 import 'package:path_provider/path_provider.dart';
-import 'package:wenku8x/screen/home/home_provider.dart';
-import 'package:wenku8x/screen/profile/profile_provider.dart';
-import 'package:wenku8x/screen/reader/reader_provider.dart';
-import 'package:wenku8x/utils/flash.dart';
-import 'package:wenku8x/utils/log.dart';
+import 'package:honzuki/screen/home/home_provider.dart';
+import 'package:honzuki/screen/profile/profile_provider.dart';
+import 'package:honzuki/screen/reader/reader_provider.dart';
+import 'package:honzuki/utils/flash.dart';
+import 'package:honzuki/utils/log.dart';
 
-import 'package:wenku8x/utils/util.dart';
+import 'package:honzuki/utils/util.dart';
 import 'package:xml/xml.dart';
 
 import 'ajax.dart';

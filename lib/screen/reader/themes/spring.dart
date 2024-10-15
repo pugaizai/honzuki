@@ -6,7 +6,6 @@ final springTheme = ThemeData(
         primary: Color(0xFF54B88B),
         primaryContainer: Color(0xFF87CDAD),
         secondary: Color(0xFF838D8A),
-        background: Color(0xFFEFF6E9),
-        onBackground: Color(0xFF081B16),
+        onSurface: Color(0xFF081B16),
         surface: Color(0xFFF7FCF3),
         outline: Color(0xFFE3EBDC)));
