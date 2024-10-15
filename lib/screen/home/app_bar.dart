@@ -116,13 +116,13 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                                   avatarFile.data!,
                                   width: 40,
                                   height: 40,
-                                  // errorBuilder: (context, error, stackTrace) {
-                                  //   return Image.asset(
-                                  //     "assets/image/akari.jpg",
-                                  //     width: 40,
-                                  //     height: 40,
-                                  //   );
-                                  // },
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Image.asset(
+                                      "assets/image/akari.jpg",
+                                      width: 40,
+                                      height: 40,
+                                    );
+                                  },
                                 )),
                       onTap: () {
                         onAvatarTap();

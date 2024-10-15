@@ -157,7 +157,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               SliverToBoxAdapter(
                   child: SwitchCard(
                 title: "颜色跟随",
-                subtitle: "根据系统模式自动打开或关闭暗色主题（限Android10+）",
+                subtitle: "根据系统模式自动打开或关闭暗色主题",
                 value: config.autoDarkMode,
                 onChanged: (value) {
                   // 添加一个微小的延时，避免重构时引起的闪烁掉帧
@@ -227,18 +227,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               //   value: false,
               //   onChanged: (value) {},
               // )),
-              // SliverToBoxAdapter(
-              //     child: TapCard(
-              //   title: "自定义头像",
-              //   subtitle: "网站存储的用户头像质量较低，为了舒适，你可以自己设置一个地址（显然，这只在本地生效）",
-              //   onTap: () {},
-              //   trailing: IconButton.filledTonal(
-              //       onPressed: () {},
-              //       icon: Icon(
-              //         Icons.face_outlined,
-              //         color: Theme.of(context).colorScheme.primary,
-              //       )),
-              // )),
               SliverToBoxAdapter(
                   child: TapCard(
                       title: "清除缓存",
@@ -260,7 +248,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                       subtitle: "无论你有什么意见和建议，都欢迎找我聊聊。当然，这不代表一定会被实现。",
                       onTap: () {
                         launchUrl(Uri.parse(
-                            'https://github.com/zsakvo/honzuki/issues/new'));
+                            'https://github.com/pugaizai/honzuki/issues/new'));
                       },
                       trailing: CircleAvatar(
                         backgroundColor:
