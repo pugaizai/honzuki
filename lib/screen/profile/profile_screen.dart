@@ -265,8 +265,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 subTitleColor:
                     Theme.of(context).colorScheme.error.withOpacity(1),
                 onTap: () async {
-                  Directory appDataDir =
-                      await getApplicationSupportDirectory();
+                  Directory appDataDir = await getApplicationSupportDirectory();
                   final cookieJar =
                       PersistCookieJar(storage: FileStorage(appDataDir.path));
                   cookieJar.deleteAll();
