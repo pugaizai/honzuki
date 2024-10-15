@@ -33,8 +33,8 @@ class Ajax {
 
   static init() async {
     sp = await SharedPreferences.getInstance();
-    Directory appDocDir = await getApplicationDocumentsDirectory();
-    final cookieJar = PersistCookieJar(storage: FileStorage(appDocDir.path));
+    Directory appDataDir = await getApplicationSupportDirectory();
+    final cookieJar = PersistCookieJar(storage: FileStorage(appDataDir.path));
     _client = Dio(BaseOptions(
         baseUrl: BASEURL,
         connectTimeout: const Duration(milliseconds: CONNECT_TIMEOUT),

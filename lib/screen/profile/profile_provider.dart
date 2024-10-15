@@ -104,7 +104,7 @@ final profileProvider = StateProvider<UserInfo>((ref) {
 });
 
 clearCache() async {
-  final dir = await getApplicationDocumentsDirectory();
+  final dir = await getApplicationSupportDirectory();
   final booksDir = Directory("${dir.path}/books");
   booksDir.listSync().forEach((element) {
     if (element.statSync().type == FileSystemEntityType.directory) {

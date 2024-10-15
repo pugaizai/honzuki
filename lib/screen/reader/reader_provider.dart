@@ -215,8 +215,8 @@ class ReaderNotifier
   }
 
   Future initCatalog() async {
-    final docDir = await getApplicationDocumentsDirectory();
-    bookDir = Directory("${docDir.path}/books/${state.aid}");
+    final dataDir = await getApplicationSupportDirectory();
+    bookDir = Directory("${dataDir.path}/books/${state.aid}");
     metaFile = File("${bookDir.path}/meta.json");
     final recordMeta = (initCIndex != null)
         ? RecordMeta(cIndex: initCIndex!, pIndex: 0)

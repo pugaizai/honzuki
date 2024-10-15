@@ -139,10 +139,10 @@ class API {
   }
 
   static Future getUserAvatar() async {
-    final docDir = await getApplicationDocumentsDirectory();
-    Log.e(docDir.path);
+    final dataDir = await getApplicationSupportDirectory();
+    Log.e(dataDir.path);
     await Ajax.post("action=avatar",
-        isXml: false, download: true, savePath: "${docDir.path}/avatar.jpg");
+        isXml: false, download: true, savePath: "${dataDir.path}/avatar.jpg");
   }
 
   static Future addToBookShelf(String aid) async {

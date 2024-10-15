@@ -28,8 +28,8 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
     final avatarUpdater = ref.watch(avatarExistProvider);
     final avatarFile = useFuture(
       useMemoized(() async {
-        final docDir = await getApplicationDocumentsDirectory();
-        var file = File("${docDir.path}/avatar.jpg");
+        final dataDir = await getApplicationSupportDirectory();
+        var file = File("${dataDir.path}/avatar.jpg");
         return file.existsSync() ? file : null;
       }, [profile, avatarUpdater]),
     );

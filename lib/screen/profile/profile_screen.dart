@@ -27,8 +27,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final config = ref.watch(configProvider);
     final profile = ref.watch(profileProvider);
     final avatarFile = useFuture(useMemoized(() async {
-      final docDir = await getApplicationDocumentsDirectory();
-      return File("${docDir.path}/avatar.jpg");
+      final dataDir = await getApplicationSupportDirectory();
+      return File("${dataDir.path}/avatar.jpg");
     }, [profile]));
     useEffect(() {
       Future(() {
@@ -265,20 +265,20 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 subTitleColor:
                     Theme.of(context).colorScheme.error.withOpacity(1),
                 onTap: () async {
-                  Directory appDocDir =
-                      await getApplicationDocumentsDirectory();
+                  Directory appDataDir =
+                      await getApplicationSupportDirectory();
                   final cookieJar =
-                      PersistCookieJar(storage: FileStorage(appDocDir.path));
+                      PersistCookieJar(storage: FileStorage(appDataDir.path));
                   cookieJar.deleteAll();
                   // ignore: use_build_context_synchronously
                   GoRouter.of(context).go("/login");
                 },
                 trailing: IconButton.filled(
                     onPressed: () async {
-                      Directory appDocDir =
-                          await getApplicationDocumentsDirectory();
+                      Directory appDataDir =
+                          await getApplicationSupportDirectory();
                       final cookieJar = PersistCookieJar(
-                          storage: FileStorage(appDocDir.path));
+                          storage: FileStorage(appDataDir.path));
                       cookieJar.deleteAll();
                       // ignore: use_build_context_synchronously
                       GoRouter.of(context).go("/login");

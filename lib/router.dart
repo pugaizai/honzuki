@@ -24,9 +24,9 @@ final router = GoRouter(
       path: '/',
       builder: (context, state) => const HomeScreen(),
       redirect: (context, state) async {
-        Directory appDocDir = await getApplicationDocumentsDirectory();
+        Directory appDataDir = await getApplicationSupportDirectory();
         final cookieJar =
-            PersistCookieJar(storage: FileStorage(appDocDir.path));
+            PersistCookieJar(storage: FileStorage(appDataDir.path));
         final cookies = await cookieJar.loadForRequest(Uri.parse(Ajax.BASEURL));
         if (cookies.isNotEmpty) {
           return "/";

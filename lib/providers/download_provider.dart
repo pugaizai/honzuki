@@ -31,8 +31,8 @@ class BookDownloader with _$BookDownloader {
       }) = _BookDownloader;
 
   Future<String> get progress async {
-    final docDir = (await getApplicationDocumentsDirectory()).path;
-    final bookDir = Directory("$docDir/books/$aid");
+    final dataDir = (await getApplicationSupportDirectory()).path;
+    final bookDir = Directory("$dataDir/books/$aid");
     final file = File("${bookDir.path}/catalog.json");
     if (!file.existsSync()) {
       if (status == BookDownloadStatus.preparing) {
@@ -83,8 +83,8 @@ class BookDownloaderNotifier extends FamilyNotifier<BookDownloader, String> {
     }
     // 准备下载书籍（先获取目录）
     state = state.copyWith(status: BookDownloadStatus.preparing);
-    final docDir = (await getApplicationDocumentsDirectory()).path;
-    final bookDir = Directory("$docDir/books/$aid");
+    final dataDir = (await getApplicationSupportDirectory()).path;
+    final bookDir = Directory("$dataDir/books/$aid");
     List<Chapter> chapters = await _getCatalog(aid);
     // 开始下载
     state = state.copyWith(status: BookDownloadStatus.downloading);
@@ -105,8 +105,8 @@ class BookDownloaderNotifier extends FamilyNotifier<BookDownloader, String> {
 
   // 获取目录
   Future<List<Chapter>> _getCatalog(String aid) async {
-    final docDir = await getApplicationDocumentsDirectory();
-    final bookDir = Directory("${docDir.path}/books/$aid");
+    final dataDir = await getApplicationSupportDirectory();
+    final bookDir = Directory("${dataDir.path}/books/$aid");
 
     final file = File("${bookDir.path}/catalog.json");
     List<Chapter> chapters = [];
@@ -126,8 +126,8 @@ class BookDownloaderNotifier extends FamilyNotifier<BookDownloader, String> {
 
   // 获取下载状态
   Future _init(String aid) async {
-    final docDir = (await getApplicationDocumentsDirectory()).path;
-    final bookDir = Directory("$docDir/books/$aid");
+    final dataDir = (await getApplicationSupportDirectory()).path;
+    final bookDir = Directory("$dataDir/books/$aid");
     // 获取已缓存的文件数目（当前书籍目录下后缀为 txt 的文件数目）
     if (bookDir.existsSync()) {
       final cachedNum = bookDir

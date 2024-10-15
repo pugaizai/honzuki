@@ -51,7 +51,7 @@ class MyBooksNotifier extends StateNotifier<List<BookItem>> {
   late final Isar _isar;
 
   Future _initDB() async {
-    final dir = await getApplicationDocumentsDirectory();
+    final dir = await getApplicationSupportDirectory();
     _isar = Isar.openSync([BookItemSchema], directory: dir.path);
   }
 
