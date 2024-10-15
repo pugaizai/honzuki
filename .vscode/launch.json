@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "wenku8x",
+            "name": "honzuki",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "wenku8x (profile mode)",
+            "name": "honzuki (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "wenku8x (release mode)",
+            "name": "honzuki (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
