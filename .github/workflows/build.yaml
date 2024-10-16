@@ -172,7 +172,7 @@ jobs:
           mkdir -p opt/Honzuki
           mkdir -p usr/share/metainfo
           mkdir -p usr/share/applications
-          mkdir -p usr/share/icons/hicolor/scalable/apps
+          mkdir -p usr/share/icons/hicolor/512x512/apps
           cp -r ../x64/release/bundle/* opt/Honzuki
           cp -r ../../../assets/linux/DEBIAN .
           chmod 0755 DEBIAN/postinst
