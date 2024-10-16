@@ -241,14 +241,10 @@ jobs:
           ls -R /tmp/artifacts/final
 
       - name: Upload to release
-        uses: Robert-Stackflow/release-action@master
+        uses: ncipollo/release-action@v1
         with:
           tag: ${{ github.ref_name }}
           allowUpdates: true
-          generateReleaseNotes: true
           artifacts: /tmp/artifacts/final/*
           artifactErrorsFailBuild: true
           replacesArtifacts: true
-          makeLatest: true
-          draft: true
-          updateOnlyUnreleased: true
