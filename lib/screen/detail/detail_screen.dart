@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:honzuki/providers/download_provider.dart';
@@ -80,17 +79,14 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                     scrolledUnderElevation: 1.0,
                     centerTitle: false,
                     leading: IconButton(
-                        onPressed: () {
-                          GoRouter.of(context).pop();
-                        },
-                        icon: SvgPicture.asset(
-                          "assets/svg/ic_search_bar_back.svg",
-                          width: 23,
-                          height: 23,
-                          // colorFilter: ColorFilter.mode(
-                          //     Theme.of(context).colorScheme.secondary,
-                          //     BlendMode.srcIn),
-                        )),
+                      onPressed: () {
+                        GoRouter.of(context).pop();
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                      ),
+                      tooltip: "返回",
+                    ),
                     backgroundColor: Theme.of(context)
                         .extension<ExtendColors>()!
                         .elevationBackground,
@@ -98,25 +94,15 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                       Padding(
                           padding: const EdgeInsets.only(right: 4, left: 4),
                           child: IconButton(
-                              onPressed: () {
-                                GoRouter.of(context)
-                                    .push("/search", extra: detail.author);
-                              },
-                              icon: SvgPicture.asset(
-                                "assets/svg/ic_topbar_person_search.svg",
-                                width: 18,
-                              ))
-                          // FilledButton.tonalIcon(
-                          //     onPressed: () {
-                          //       GoRouter.of(context)
-                          //           .push("/search", extra: detail.author);
-                          //     },
-                          //     label: const Text("搜索作者"),
-                          //     icon: SvgPicture.asset(
-                          //       "assets/svg/ic_topbar_person_search.svg",
-                          //       width: 18,
-                          //     )),
-                          )
+                            onPressed: () {
+                              GoRouter.of(context)
+                                  .push("/search", extra: detail.author);
+                            },
+                            icon: Icon(
+                              Icons.person_search,
+                            ),
+                            tooltip: "搜索作者",
+                          ))
                     ],
                     title: Text(
                       detail.name,
@@ -208,17 +194,8 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                                     .addBook(detail);
                           },
                           child: Column(children: [
-                            SvgPicture.asset(
-                              isFav
-                                  ? "assets/svg/ic_btn_like.svg"
-                                  : "assets/svg/ic_btn_like_line.svg",
-                              width: 20,
-                              colorFilter: ColorFilter.mode(
-                                  Theme.of(context)
-                                      .colorScheme
-                                      .secondary
-                                      .withOpacity(0.7),
-                                  BlendMode.srcIn),
+                            Icon(
+                              isFav ? Icons.favorite : Icons.favorite_outline,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 4),
@@ -241,12 +218,8 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                             Show.error("尚未开放此功能");
                           },
                           child: Column(children: [
-                            SvgPicture.asset(
-                              "assets/svg/ic_btn_share.svg",
-                              width: 20,
-                              colorFilter: ColorFilter.mode(
-                                  Theme.of(context).colorScheme.secondary,
-                                  BlendMode.srcIn),
+                            Icon(
+                              Icons.share,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 4),
@@ -268,12 +241,8 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                             ref.read(provider.notifier).download(bookItem.aid);
                           },
                           child: Column(children: [
-                            SvgPicture.asset(
-                              "assets/svg/ic_btn_download.svg",
-                              width: 20,
-                              colorFilter: ColorFilter.mode(
-                                  Theme.of(context).colorScheme.secondary,
-                                  BlendMode.srcIn),
+                            Icon(
+                              Icons.download,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 4),
@@ -384,10 +353,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                   child: showExtendFab.value
                       ? Row(
                           children: [
-                            SvgPicture.asset(
-                              "assets/svg/ic_btn_read.svg",
-                              width: 20,
-                            ),
+                            Icon(Icons.menu_book),
                             const Expanded(
                                 child: Padding(
                               padding: EdgeInsets.only(left: 12),
@@ -399,10 +365,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                             ))
                           ],
                         )
-                      : SvgPicture.asset(
-                          "assets/svg/ic_btn_read.svg",
-                          width: 20,
-                        ),
+                      : Icon(Icons.menu_book),
                 )));
   }
 }

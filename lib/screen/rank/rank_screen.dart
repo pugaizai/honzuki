@@ -1,6 +1,5 @@
 import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:honzuki/screen/rank/book_item.dart';
@@ -38,26 +37,13 @@ class _RankScreenState extends ConsumerState<RankScreen> {
               onPressed: () {
                 GoRouter.of(context).pop();
               },
-              icon: SvgPicture.asset(
-                "assets/svg/ic_search_bar_back.svg",
-                width: 23,
-                height: 23,
-                // colorFilter: ColorFilter.mode(
-                //     Theme.of(context).colorScheme.secondary,
-                //     BlendMode.srcIn),
-              )),
+              icon: Icon(Icons.arrow_back)),
           actions: [
             IconButton(
                 onPressed: () {
                   GoRouter.of(context).push("/search");
                 },
-                icon: SvgPicture.asset(
-                  "assets/svg/ic_topbar_search.svg",
-                  width: 23,
-                  height: 23,
-                  colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onSurface, BlendMode.srcIn),
-                ))
+                icon: Icon(Icons.search))
           ],
           bottom: rank.subs == null
               ? null

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:honzuki/screen/search/search_provider.dart';
@@ -59,13 +57,7 @@ class _SearchAppBarState extends ConsumerState<SearchAppBar> {
                                 onPressed: () {
                                   GoRouter.of(context).pop();
                                 },
-                                icon: SvgPicture.asset(
-                                  "assets/svg/ic_search_bar_back.svg",
-                                  width: 23,
-                                  height: 23,
-                                  colorFilter: ColorFilter.mode(
-                                      colorScheme.secondary, BlendMode.srcIn),
-                                )),
+                                icon: Icon(Icons.arrow_back)),
                             Expanded(
                                 child: TextField(
                               cursorHeight: 15,

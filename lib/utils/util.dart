@@ -13,7 +13,7 @@ class Util {
     String restOfString = colorHex.substring(2);
     return restOfString + firstTwoChars;
   }
-  
+
   static isDesktop() {
     return Platform.isLinux || Platform.isMacOS || Platform.isWindows;
   }

@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:honzuki/http/api.dart';
@@ -58,12 +57,8 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                                 .withOpacity(0.5)),
                         child: Row(
                           children: [
-                            SvgPicture.asset(
-                              "assets/svg/ic_topbar_search.svg",
-                              width: 23,
-                              height: 23,
-                              colorFilter: ColorFilter.mode(
-                                  colorScheme.secondary, BlendMode.srcIn),
+                            Icon(
+                              Icons.search,
                             ),
                             Expanded(
                                 child: Container(
@@ -88,13 +83,7 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                               child: Padding(
                                   padding:
                                       const EdgeInsets.only(right: 16, left: 3),
-                                  child: SvgPicture.asset(
-                                    "assets/svg/ic_topbar_add.svg",
-                                    width: 23,
-                                    height: 23,
-                                    colorFilter: ColorFilter.mode(
-                                        colorScheme.secondary, BlendMode.srcIn),
-                                  )),
+                                  child: Icon(Icons.add)),
                               onTap: () {
                                 onAddTap();
                               },

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:honzuki/screen/palette/palette_provider.dart';
 import 'package:honzuki/screen/palette/selectable_palette.dart';
 import 'package:honzuki/screen/profile/profile_provider.dart';
 import 'package:honzuki/theme/extend.dart';
-import 'package:honzuki/utils/palette.dart';
-
-import 'svg.dart';
 
 class PaletteScreen extends StatefulHookConsumerWidget {
   const PaletteScreen({super.key});
@@ -38,14 +34,7 @@ class _PaletteScreenState extends ConsumerState<PaletteScreen> {
                   onPressed: () {
                     GoRouter.of(context).pop();
                   },
-                  icon: SvgPicture.asset(
-                    "assets/svg/ic_search_bar_back.svg",
-                    width: 23,
-                    height: 23,
-                    // colorFilter: ColorFilter.mode(
-                    //     Theme.of(context).colorScheme.secondary,
-                    //     BlendMode.srcIn),
-                  )),
+                  icon: Icon(Icons.arrow_back)),
               titleSpacing: 0,
               scrolledUnderElevation: 0,
               backgroundColor: Theme.of(context)
@@ -75,11 +64,6 @@ class _PaletteScreenState extends ConsumerState<PaletteScreen> {
                   top: 48, bottom: 48, left: 48, right: 48),
               margin: const EdgeInsets.only(
                   bottom: 24, top: 16, left: 24, right: 24),
-              child: SvgPicture.string(
-                parseDynamicColor(PALETTE_SVG,
-                    primaryColor: Theme.of(context).colorScheme.primary.value),
-                height: 120,
-              ),
             )),
             SliverPadding(
               padding: const EdgeInsets.only(left: 16, right: 16, top: 0),

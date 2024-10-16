@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
-import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:honzuki/screen/reader/reader_provider.dart';
 
@@ -59,14 +57,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                         //     .read(readerMenuStateProvider.notifier)
                         //     .toggleBottomAndTop();
                       },
-                      icon: SvgPicture.asset(
-                          "assets/svg/ic_bottom_bar_menu.svg",
-                          width: 18,
-                          colorFilter: ColorFilter.mode(
-                              state.menuCatalogVisible
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Theme.of(context).colorScheme.onSurface,
-                              BlendMode.srcIn))),
+                      icon: Icon(Icons.menu)),
                 )),
                 Flexible(
                     child: Center(
@@ -83,14 +74,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                             menuTextVisible: false,
                             menuConfigVisible: false);
                       },
-                      icon: SvgPicture.asset(
-                          "assets/svg/ic_bottom_bar_palette.svg",
-                          width: 18,
-                          colorFilter: ColorFilter.mode(
-                              state.menuThemeVisible
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Theme.of(context).colorScheme.onSurface,
-                              BlendMode.srcIn))),
+                      icon: Icon(Icons.palette)),
                 )),
                 Flexible(
                     child: Center(
@@ -107,14 +91,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                                 .menuTextVisible,
                             menuConfigVisible: false);
                       },
-                      icon: SvgPicture.asset(
-                          "assets/svg/ic_bottom_bar_font.svg",
-                          width: 18,
-                          colorFilter: ColorFilter.mode(
-                              state.menuTextVisible
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Theme.of(context).colorScheme.onSurface,
-                              BlendMode.srcIn))),
+                      icon: Icon(Icons.font_download)),
                 )),
                 Flexible(
                     child: Center(
@@ -131,14 +108,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                                 .read(readerMenuStateProvider)
                                 .menuConfigVisible);
                       },
-                      icon: SvgPicture.asset(
-                          "assets/svg/ic_bottom_bar_setting.svg",
-                          width: 18,
-                          colorFilter: ColorFilter.mode(
-                              state.menuConfigVisible
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Theme.of(context).colorScheme.onSurface,
-                              BlendMode.srcIn))),
+                      icon: Icon(Icons.settings)),
                 )),
               ])
             ],

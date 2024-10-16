@@ -1,7 +1,6 @@
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:honzuki/providers/download_provider.dart';
@@ -40,9 +39,8 @@ class DetailModal extends HookConsumerWidget {
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             tileColor: Theme.of(context).colorScheme.surface,
-            trailing: SvgPicture.asset(
-              "assets/svg/ic_pannel_edit_circle.svg",
-              width: 18,
+            trailing: Icon(
+              Icons.details,
             ),
             onTap: () {
               GoRouter.of(context).push("/detail", extra: bookItem);
@@ -60,9 +58,8 @@ class DetailModal extends HookConsumerWidget {
               style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             tileColor: Theme.of(context).colorScheme.surface,
-            trailing: SvgPicture.asset(
-              "assets/svg/ic_btn_download.svg",
-              width: 18,
+            trailing: Icon(
+              Icons.download,
             ),
             onTap: () {
               ref.read(provider.notifier).download(bookItem.aid).then((value) {
@@ -87,11 +84,8 @@ class DetailModal extends HookConsumerWidget {
                   color: Theme.of(context).colorScheme.error),
             ),
             tileColor: Theme.of(context).colorScheme.surface,
-            trailing: SvgPicture.asset(
-              "assets/svg/ic_pannel_delete.svg",
-              width: 18,
-              colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.error, BlendMode.srcIn),
+            trailing: Icon(
+              Icons.delete,
             ),
             onTap: () {
               ref.read(myBooksProvider.notifier).delBook(bookItem.aid);

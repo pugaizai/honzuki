@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,23 +18,19 @@ class _ErrorScreenState extends ConsumerState<ErrorScreen> {
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(
-            "assets/svg/il_page_error.svg",
-            width: MediaQuery.of(context).size.width,
-          ),
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 128),
             child: Text(
               "出错了",
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Text(
               widget.err,
               style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary, fontSize: 14),
+                  color: Theme.of(context).colorScheme.secondary, fontSize: 16),
             ),
           )
         ],

@@ -1,6 +1,5 @@
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -36,56 +35,56 @@ class _AddModalState extends ConsumerState<AddModal> {
             children: [
               buildButton(
                   title: "点击榜单",
-                  icon: "assets/svg/ic_pannel_vip.svg",
+                  icon: Icons.ads_click,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/rank/visit/点击榜");
                   }),
               buildButton(
                   title: "推荐榜单",
-                  icon: "assets/svg/ic_pannel_thumb.svg",
+                  icon: Icons.thumb_up,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/rank/vote/推荐榜");
                   }),
               buildButton(
                   title: "最新入库",
-                  icon: "assets/svg/ic_pannel_drive.svg",
+                  icon: Icons.library_add,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/rank/postdate/最新入库");
                   }),
               buildButton(
                   title: "收藏排行",
-                  icon: "assets/svg/ic_pannel_medal.svg",
+                  icon: Icons.bookmark,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/rank/goodnum/收藏排行");
                   }),
               buildButton(
                   title: "字数排行",
-                  icon: "assets/svg/ic_pannel_seeding.svg",
+                  icon: Icons.abc,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/rank/size/字数排行");
                   }),
               buildButton(
                   title: "完结小说",
-                  icon: "assets/svg/ic_pannel_nft.svg",
+                  icon: Icons.book,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/rank/fullflag/完结小说");
                   }),
               buildButton(
                   title: "最近更新",
-                  icon: "assets/svg/ic_pannel_pen.svg",
+                  icon: Icons.update,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/rank/lastupdate/最近更新");
                   }),
               buildButton(
                   title: "搜索书籍",
-                  icon: "assets/svg/ic_topbar_search.svg",
+                  icon: Icons.search,
                   onTap: () {
                     widget.controller.dismiss();
                     GoRouter.of(context).push("/search");
@@ -107,7 +106,7 @@ class _AddModalState extends ConsumerState<AddModal> {
   }
 
   buildButton(
-      {required String title, required String icon, VoidCallback? onTap}) {
+      {required String title, required IconData icon, VoidCallback? onTap}) {
     return SizedBox(
       width: 64,
       child: Column(
@@ -117,14 +116,9 @@ class _AddModalState extends ConsumerState<AddModal> {
             onTap: onTap,
             child: ClipOval(
               child: Container(
-                padding: const EdgeInsets.all(12),
-                color: Theme.of(context).colorScheme.surface,
-                child: SvgPicture.asset(
-                  icon,
-                  width: 28,
-                  height: 28,
-                ),
-              ),
+                  padding: const EdgeInsets.all(12),
+                  color: Theme.of(context).colorScheme.surface,
+                  child: Icon(icon)),
             ),
           ),
           Padding(

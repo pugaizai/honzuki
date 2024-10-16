@@ -44,7 +44,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         appBar: Util.isDesktop()
             ? AppBar(
                 leading: IconButton(
-                  icon: const Icon(Icons.arrow_back_rounded),
+                  icon: const Icon(Icons.arrow_back),
                   tooltip: '返回',
                   onPressed: () {
                     context.pop();
@@ -130,7 +130,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                                           padding:
                                               const EdgeInsets.only(right: 4),
                                           child: Icon(
-                                            Icons.water_drop_outlined,
+                                            Icons.water_drop,
                                             color: Theme.of(context)
                                                 .colorScheme
                                                 .secondary,
@@ -208,7 +208,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     backgroundColor:
                         Theme.of(context).colorScheme.primaryContainer,
                     child: Icon(
-                      Icons.palette_outlined,
+                      Icons.palette,
                       color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
@@ -238,7 +238,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         backgroundColor:
                             Theme.of(context).colorScheme.primaryContainer,
                         child: Icon(
-                          Icons.delete_outline,
+                          Icons.delete,
                           color: Theme.of(context).colorScheme.primary,
                         ),
                       ))),
@@ -254,7 +254,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         backgroundColor:
                             Theme.of(context).colorScheme.primaryContainer,
                         child: Icon(
-                          Icons.lightbulb_outline,
+                          Icons.lightbulb,
                           color: Theme.of(context).colorScheme.primary,
                         ),
                       ))),
@@ -287,7 +287,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     style: IconButton.styleFrom(
                         backgroundColor: Theme.of(context).colorScheme.error),
                     icon: Icon(
-                      Icons.exit_to_app_outlined,
+                      Icons.exit_to_app,
                       color: Theme.of(context).colorScheme.onError,
                     )),
               )),
