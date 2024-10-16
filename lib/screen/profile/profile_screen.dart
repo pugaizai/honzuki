@@ -27,10 +27,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   Widget build(BuildContext context) {
     final config = ref.watch(configProvider);
     final profile = ref.watch(profileProvider);
-    final avatarFile = useFuture(useMemoized(() async {
-      final dataDir = await getApplicationSupportDirectory();
-      return File("${dataDir.path}/avatar.jpg");
-    }, [profile]));
     useEffect(() {
       Future(() {
         API.getUserInfo(ref);
@@ -59,101 +55,20 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             child: SafeArea(
                 child: CustomScrollView(slivers: [
               SliverToBoxAdapter(
-                  child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, top: 64, bottom: 8),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                ClipOval(
-                                    child: Image.file(
-                                  avatarFile.data ??
-                                      File("assets/image/akari.jpg"),
-                                  width: 64,
-                                  height: 64,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Image.asset(
-                                      "assets/image/akari.jpg",
-                                      width: 64,
-                                      height: 64,
-                                    );
-                                  },
-                                )),
-                                const SizedBox(
-                                  width: 16,
-                                ),
-                                Expanded(
-                                    child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      profile.nickname!,
-                                      style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onSurface,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.8),
-                                    ),
-                                    Text(
-                                      "${profile.rank!}\t/\t${profile.score!}积分",
-                                      style: TextStyle(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .secondary
-                                            .withOpacity(0.7),
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                )),
-                                IconButton.outlined(
-                                    style: OutlinedButton.styleFrom(
-                                        side: BorderSide(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .secondary
-                                                .withOpacity(0.5),
-                                            width: 0.7),
-                                        minimumSize: const Size(42, 36)),
-                                    padding: const EdgeInsets.only(
-                                        left: 14, right: 16),
-                                    onPressed: () {
-                                      API.getUserSign(ref);
-                                    },
-                                    icon: Row(
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 4),
-                                          child: Icon(
-                                            Icons.water_drop,
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .secondary,
-                                            size: 18,
-                                          ),
-                                        ),
-                                        Text(
-                                          "签到",
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .secondary,
-                                          ),
-                                        )
-                                      ],
-                                    ))
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                          ]))),
+                  child: TapCard(
+                      title: profile.nickname!,
+                      subtitle: "${profile.rank!}\t/\t${profile.score!}积分",
+                      onTap: () {
+                        API.getUserSign(ref);
+                      },
+                      trailing: CircleAvatar(
+                        backgroundColor:
+                            Theme.of(context).colorScheme.primaryContainer,
+                        child: Icon(
+                          Icons.water_drop,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ))),
               SliverToBoxAdapter(
                   child: SwitchCard(
                 title: "颜色跟随",

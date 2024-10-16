@@ -1,9 +1,7 @@
-import 'package:path_provider/path_provider.dart';
 import 'package:honzuki/screen/home/home_provider.dart';
 import 'package:honzuki/screen/profile/profile_provider.dart';
 import 'package:honzuki/screen/reader/reader_provider.dart';
 import 'package:honzuki/utils/flash.dart';
-import 'package:honzuki/utils/log.dart';
 
 import 'package:honzuki/utils/util.dart';
 import 'package:xml/xml.dart';
@@ -109,9 +107,6 @@ class API {
 
   static Future getUserInfo(dynamic container) async {
     XmlDocument? res = await Ajax.post("action=userinfo");
-    getUserAvatar().then((_) => container
-        .read(avatarExistProvider.notifier)
-        .state = DateTime.now().millisecondsSinceEpoch);
     if (res != null) {
       final children = res.children[2].children;
       // Log.e(res.children);
@@ -136,13 +131,6 @@ class API {
       Show.success("签到成功，积分可能需要稍等一会儿才会刷新~");
       getUserInfo(ref);
     }
-  }
-
-  static Future getUserAvatar() async {
-    final dataDir = await getApplicationSupportDirectory();
-    Log.e(dataDir.path);
-    await Ajax.post("action=avatar",
-        isXml: false, download: true, savePath: "${dataDir.path}/avatar.jpg");
   }
 
   static Future addToBookShelf(String aid) async {

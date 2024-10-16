@@ -1,12 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:honzuki/http/api.dart';
-import 'package:honzuki/screen/profile/profile_provider.dart';
 import 'package:honzuki/service/navigation.dart';
 
 class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
@@ -22,16 +18,7 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final profile = ref.watch(profileProvider);
     final colorScheme = getColorScheme(context);
-    final avatarUpdater = ref.watch(avatarExistProvider);
-    final avatarFile = useFuture(
-      useMemoized(() async {
-        final dataDir = await getApplicationSupportDirectory();
-        var file = File("${dataDir.path}/avatar.jpg");
-        return file.existsSync() ? file : null;
-      }, [profile, avatarUpdater]),
-    );
 
     useEffect(() {
       API.getUserInfo(ref);
@@ -57,8 +44,17 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                                 .withOpacity(0.5)),
                         child: Row(
                           children: [
-                            Icon(
-                              Icons.search,
+                            IconButton(
+                              icon: Icon(Icons.person),
+                              onPressed: () {
+                                onAvatarTap();
+                              },
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.search),
+                              onPressed: () {
+                                onSearchTap();
+                              },
                             ),
                             Expanded(
                                 child: Container(
@@ -79,12 +75,9 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                               endIndent: 8,
                               color: colorScheme.secondary.withOpacity(0.1),
                             ),
-                            GestureDetector(
-                              child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(right: 16, left: 3),
-                                  child: Icon(Icons.add)),
-                              onTap: () {
+                            IconButton(
+                              icon: Icon(Icons.add),
+                              onPressed: () {
                                 onAddTap();
                               },
                             ),
@@ -92,31 +85,6 @@ class HomeAppBar extends HookConsumerWidget implements PreferredSizeWidget {
                         ),
                       ),
                     ),
-                    // 原形头像
-                    GestureDetector(
-                      child: ClipOval(
-                          child: avatarFile.data == null
-                              ? Image.asset(
-                                  "assets/image/akari.jpg",
-                                  width: 40,
-                                  height: 40,
-                                )
-                              : Image.file(
-                                  avatarFile.data!,
-                                  width: 40,
-                                  height: 40,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Image.asset(
-                                      "assets/image/akari.jpg",
-                                      width: 40,
-                                      height: 40,
-                                    );
-                                  },
-                                )),
-                      onTap: () {
-                        onAvatarTap();
-                      },
-                    )
                   ],
                 ),
                 Padding(

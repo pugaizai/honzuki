@@ -119,7 +119,3 @@ clearCache() async {
   });
   Show.success("缓存清除成功");
 }
-
-final avatarExistProvider = StateProvider<int>((ref) {
-  return DateTime.now().millisecondsSinceEpoch;
-});
