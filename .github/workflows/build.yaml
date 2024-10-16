@@ -22,7 +22,10 @@ jobs:
           - target: Android
             os: ubuntu-latest
             artifact_name: release-Android
-            artifact_path: build/app/outputs/flutter-apk/*.apk
+            artifact_path: |
+              build/app/outputs/flutter-apk/*-android-arm64-v8a.apk
+              build/app/outputs/flutter-apk/*-android-armeabi-v7a.apk
+              build/app/outputs/flutter-apk/*-android-x86_64.apk
           - target: Windows
             os: windows-latest
             artifact_name: release-Windows
