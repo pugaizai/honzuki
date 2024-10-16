@@ -145,9 +145,8 @@ jobs:
           flutter build windows --release
           $DestDir = "build\windows\outputs\Honzuki-${{ steps.get_version.outputs.version }}-windows-x86_64"
           $SrcDir = "build\windows\x64\runner\Release"
-          $dllDir = "tools\windows_dll"
           
-          Copy-Item -Filter *.dll -Path $dllDir\* -Destination $SrcDir -Force
+          Copy-Item -Filter *.dll -Path windows\* -Destination $DestDir -Force
           New-Item -Path $DestDir -ItemType Directory
           Copy-Item $SrcDir\* -Recurse $DestDir
           
