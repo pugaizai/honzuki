@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+ln -sf /opt/Honzuki/Honzuki /usr/bin/Honzuki
+chmod +x /usr/bin/Honzuki
+update-mime-database /usr/share/mime || true
+update-desktop-database /usr/share/applications || true
+exit 0

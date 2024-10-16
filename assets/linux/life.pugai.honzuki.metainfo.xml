@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>life.pugai.honzuki</id>
+  <launchable type="desktop-id">life.pugai.honzuki.desktop</launchable>
+  <name>Honzuki</name>
+  <name xml:lang="zh_CN">小书痴</name>
+  <developer_name>pugaizai</developer_name>
+  <summary>A light novel reader for wenku8.net</summary>
+  <summary xml:lang="zh_CN">轻小说文库的第三方客户端</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <url type="homepage">https://github.com/pugaizai/honzuki</url>
+  <url type="bugtracker">https://github.com/pugaizai/honzuki/issues</url>
+  <description>
+    <p>A light novel reader for wenku8.net</p>
+    <p xml:lang="zh_CN">轻小说文库的第三方客户端</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Bookshelf</caption>
+      <image type="source">https://raw.githubusercontent.com/pugaizai/honzuki/refs/heads/main/assets/doc/main.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Reader</caption>
+      <image type="source">https://raw.githubusercontent.com/pugaizai/honzuki/refs/heads/main/assets/doc/reader.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+      <description></description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1"/>
+  <update_contact>i@pugai.life</update_contact>
+</component>

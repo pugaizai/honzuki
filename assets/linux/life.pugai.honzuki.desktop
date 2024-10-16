@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Honzuki
+Name[zh_CN]=小书痴
+Comment=A light novel reader for wenku8.net
+Comment[zh_CN]=轻小说文库的第三方客户端
+Exec=Honzuki
+Icon=life.pugai.honzuki
+Terminal=false
+Type=Application
+Categories=Network;Office;
