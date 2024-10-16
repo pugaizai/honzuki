@@ -192,7 +192,7 @@ jobs:
           Depends: libglu1-mesa
           EOF
           
-          sed -i '29i\    <release version="${{ steps.get_version.outputs.version }}" date="${{ steps.get_version.outputs.date }}">' ../../../tools/linux_tools/life.pugai.honzuki.metainfo.xml
+          sed -i '29i\    <release version="${{ steps.get_version.outputs.version }}" date="${{ steps.get_version.outputs.date }}">' ../../../assets/linux/life.pugai.honzuki.metainfo.xml
           cp ../../../assets/linux/life.pugai.honzuki.metainfo.xml usr/share/metainfo
           cp ../../../assets/linux/life.pugai.honzuki.desktop usr/share/applications
           cp ../../../assets/icon/icon_512.png usr/share/icons/hicolor/512x512/apps/life.pugai.honzuki.png
