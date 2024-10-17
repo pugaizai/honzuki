@@ -1,17 +1,14 @@
-.PHONY: runner_watch
+.PHONY: watch
 watch:
 	dart run build_runner watch --delete-conflicting-outputs
 
-.PHONY: runner_build
+.PHONY: build
 build:
 	dart run build_runner build
 
 .PHONY: fix
-fix:
+fix: 
 	dart fix --apply
-
-.PHONY: format
-format: fix
 	dart format .
 
 .PHONY: gen-l10n
