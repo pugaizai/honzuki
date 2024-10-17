@@ -53,21 +53,43 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 SliverList.builder(
                   itemBuilder: (context, index) {
                     final book = books[index];
-                    final child = BookItemComp(book, onItemTap: (item) {
-                      GoRouter.of(context)
-                          .push("/reader/${item.name}/${item.aid}/-1");
-                    }, onItemLongTap: (item) {
-                      Show.pannel(
-                        context: context,
-                        builder: (context, controller) {
-                          return DetailModal(controller, book);
-                        },
-                      );
-                    });
+                    final child = Row(
+                      children: [
+                        Expanded(
+                          child: BookItemComp(
+                            book,
+                            onItemTap: (item) {
+                              GoRouter.of(context)
+                                  .push("/reader/${item.name}/${item.aid}/-1");
+                            },
+                            onItemLongTap: (item) {
+                              Show.pannel(
+                                context: context,
+                                builder: (context, controller) {
+                                  return DetailModal(controller, book);
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.more_vert),
+                          onPressed: () {
+                            Show.pannel(
+                              context: context,
+                              builder: (context, controller) {
+                                return DetailModal(controller, book);
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    );
                     return index == 0
                         ? Padding(
                             padding: const EdgeInsets.only(top: 16),
-                            child: child)
+                            child: child,
+                          )
                         : child;
                   },
                   itemCount: books.length,

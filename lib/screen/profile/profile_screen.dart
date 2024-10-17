@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
-import 'package:honzuki/utils/util.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -37,18 +36,16 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         Theme.of(context).extension<ExtendColors>()!.elevationBackground;
     return Scaffold(
         backgroundColor: backgroundColor,
-        appBar: Util.isDesktop()
-            ? AppBar(
-                leading: IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  tooltip: '返回',
-                  onPressed: () {
-                    context.pop();
-                  },
-                ),
-                backgroundColor: backgroundColor,
-              )
-            : null,
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            tooltip: '返回',
+            onPressed: () {
+              context.pop();
+            },
+          ),
+          backgroundColor: backgroundColor,
+        ),
         body: SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -69,6 +66,20 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           color: Theme.of(context).colorScheme.primary,
                         ),
                       ))),
+              SliverToBoxAdapter(
+                  child: SwitchCard(
+                title: "繁体中文",
+                subtitle: "切换到繁体中文（注意！这会清除你的书籍缓存）",
+                value: config.zhHant,
+                onChanged: (value) {
+                  // 添加一个微小的延时，避免重构时引起的闪烁掉帧
+                  Future.delayed(const Duration(milliseconds: 120)).then((_) {
+                    ref
+                        .read(configProvider.notifier)
+                        .update(config.copyWith(zhHant: value));
+                  });
+                },
+              )),
               SliverToBoxAdapter(
                   child: SwitchCard(
                 title: "颜色跟随",
@@ -128,20 +139,6 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     ),
                   ),
                 )),
-              // SliverToBoxAdapter(
-              //     child: SwitchCard(
-              //   title: "固定排序",
-              //   subtitle: "根据图书加入书架的时间顺序进行排序（默认规则为图书最后阅读时间）",
-              //   value: false,
-              //   onChanged: (value) {},
-              // )),
-              // SliverToBoxAdapter(
-              //     child: SwitchCard(
-              //   title: "简繁转换",
-              //   subtitle: "当前为简体中文（注意，这会清除你的书籍缓存）",
-              //   value: false,
-              //   onChanged: (value) {},
-              // )),
               SliverToBoxAdapter(
                   child: TapCard(
                       title: "清除缓存",
