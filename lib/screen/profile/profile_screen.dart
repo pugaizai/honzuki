@@ -78,6 +78,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         .read(configProvider.notifier)
                         .update(config.copyWith(zhHant: value));
                   });
+                  clearCache();
                 },
               )),
               SliverToBoxAdapter(

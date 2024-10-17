@@ -44,12 +44,12 @@ const ranks = [
 ];
 
 class MyBooksNotifier extends StateNotifier<List<BookItem>> {
-  MyBooksNotifier() : super([]) {
+  MyBooksNotifier(this.ref) : super([]) {
     _initDB().then((_) => refresh());
   }
 
   late final Isar _isar;
-
+  final Ref ref;
   Future _initDB() async {
     final dir = await getApplicationSupportDirectory();
     _isar = Isar.openSync([BookItemSchema], directory: dir.path);
@@ -73,7 +73,7 @@ class MyBooksNotifier extends StateNotifier<List<BookItem>> {
   void refresh() async {
     // state = isar.myBooks.where().findAllSync();
     state = _getBooksFromDB();
-    var res = await API.getShelfBookList();
+    var res = await API.getShelfBookList(ref);
     // var localAids = state.map((e) => e.aid).toSet();
     // var remoteAids = res.map((e) => e.aid).toSet();
     // var delAids = localAids.difference(remoteAids);
@@ -108,5 +108,5 @@ class MyBooksNotifier extends StateNotifier<List<BookItem>> {
 
 final myBooksProvider =
     StateNotifierProvider<MyBooksNotifier, List<BookItem>>((ref) {
-  return MyBooksNotifier();
+  return MyBooksNotifier(ref);
 });

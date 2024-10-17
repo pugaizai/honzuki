@@ -94,7 +94,7 @@ class BookDownloaderNotifier extends FamilyNotifier<BookDownloader, String> {
       final file = File("${bookDir.path}/${chapter.cid}.txt");
       if (!file.existsSync()) {
         if (!bookDir.existsSync()) bookDir.createSync(recursive: true);
-        final content = await API.getNovelContent(aid, chapter.cid);
+        final content = await API.getNovelContent(aid, chapter.cid, ref);
         file.writeAsString(content);
       }
       state = state.copyWith(cachedNum: i + 1);
@@ -118,7 +118,7 @@ class BookDownloaderNotifier extends FamilyNotifier<BookDownloader, String> {
       }).toList();
     } else {
       if (!bookDir.existsSync()) bookDir.createSync(recursive: true);
-      chapters = await API.getNovelIndex(aid);
+      chapters = await API.getNovelIndex(aid, ref);
       file.writeAsString(jsonEncode(chapters));
     }
     return chapters;

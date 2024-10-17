@@ -10,19 +10,19 @@ class DetailNotifier extends AutoDisposeFamilyNotifier<BookItem, BookItem> {
   build(arg) {
     Future.delayed(const Duration(milliseconds: 300)).then((_) async {
       String intro = await _getIntro(arg.aid);
-      List<Chapter> catalog = await _getCatalog(arg.aid);
-      BookItem bookItem = await _getMeta(bookItem: arg);
+      List<Chapter> catalog = await _getCatalog(arg.aid, ref);
+      BookItem bookItem = await _getMeta(bookItem: arg, ref: ref);
       state = bookItem.copyWith(intro: intro, catalog: catalog);
     });
     return arg;
   }
 
   _getIntro(aid) async {
-    return await API.getNovelFullIntro(aid);
+    return await API.getNovelFullIntro(aid, ref);
   }
 
-  _getMeta({required BookItem bookItem}) async {
-    final value = await API.getNovelFullMeta(bookItem.aid);
+  _getMeta({required BookItem bookItem, required Ref ref}) async {
+    final value = await API.getNovelFullMeta(bookItem.aid, ref);
     if (value != null) {
       var eles = value.findAllElements("data").toList();
       final aid = eles[0].getAttribute("aid")!;
@@ -40,8 +40,8 @@ class DetailNotifier extends AutoDisposeFamilyNotifier<BookItem, BookItem> {
     }
   }
 
-  Future<List<Chapter>> _getCatalog(aid) async {
-    return await API.getNovelIndex(aid);
+  Future<List<Chapter>> _getCatalog(aid, ref) async {
+    return await API.getNovelIndex(aid, ref);
   }
 }
 

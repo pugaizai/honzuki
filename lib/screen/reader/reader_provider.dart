@@ -233,7 +233,7 @@ class ReaderNotifier
       }).toList();
     } else {
       if (!bookDir.existsSync()) bookDir.createSync(recursive: true);
-      chapters = await API.getNovelIndex(state.aid);
+      chapters = await API.getNovelIndex(state.aid, ref);
       file.writeAsString(jsonEncode(chapters));
     }
     state = state.copyWith(catalog: chapters, cIndex: recordMeta.cIndex);
@@ -245,7 +245,7 @@ class ReaderNotifier
     final file = File("${bookDir.path}/$cid.txt");
     String text = file.existsSync()
         ? file.readAsStringSync()
-        : await API.getNovelContent(state.aid, cid);
+        : await API.getNovelContent(state.aid, cid, ref);
     // String text = await API.getNovelContent(state.aid, cid);
     List<String> textArr = text.split(RegExp(r"\n\s*|\s{2,}"));
     textArr.removeRange(0, 2);

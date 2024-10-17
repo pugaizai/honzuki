@@ -115,7 +115,7 @@ class _BookItemCompState extends ConsumerState<BookItemComp>
 
 final bookItemProvider =
     AutoDisposeFutureProvider.family<BookItem, String>((ref, aid) async {
-  return API.getNovelFullMeta(aid).then((value) {
+  return API.getNovelFullMeta(aid, ref).then((value) {
     if (value != null) {
       var eles = value.findAllElements("data").toList();
       final aid = eles[0].getAttribute("aid")!;
