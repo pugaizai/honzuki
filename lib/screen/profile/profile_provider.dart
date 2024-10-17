@@ -19,7 +19,6 @@ class Config with _$Config {
     @Default(false) bool fixedSequence,
     @Default(false) bool showImage,
     @Default(false) bool zhHant,
-    @Default("") String customAvataar,
   }) = _Config;
 
   const Config._();
@@ -33,7 +32,6 @@ class Config with _$Config {
       fixedSequence: json["fixedSequence"] ?? false,
       showImage: json["showImage"] ?? false,
       zhHant: json["zhHant"] ?? false,
-      customAvataar: json["customAvataar"] ?? "",
     );
   }
 
@@ -46,7 +44,6 @@ class Config with _$Config {
       "fixedSequence": fixedSequence,
       "showImage": showImage,
       "zhHant": zhHant,
-      "customAvataar": customAvataar,
     };
   }
 }

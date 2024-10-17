@@ -23,7 +23,6 @@ mixin _$Config {
   bool get fixedSequence => throw _privateConstructorUsedError;
   bool get showImage => throw _privateConstructorUsedError;
   bool get zhHant => throw _privateConstructorUsedError;
-  String get customAvataar => throw _privateConstructorUsedError;
 
   /// Create a copy of Config
   /// with the given fields replaced by the non-null parameter values.
@@ -43,8 +42,7 @@ abstract class $ConfigCopyWith<$Res> {
       int colorSeed,
       bool fixedSequence,
       bool showImage,
-      bool zhHant,
-      String customAvataar});
+      bool zhHant});
 }
 
 /// @nodoc
@@ -69,7 +67,6 @@ class _$ConfigCopyWithImpl<$Res, $Val extends Config>
     Object? fixedSequence = null,
     Object? showImage = null,
     Object? zhHant = null,
-    Object? customAvataar = null,
   }) {
     return _then(_value.copyWith(
       autoDarkMode: null == autoDarkMode
@@ -100,10 +97,6 @@ class _$ConfigCopyWithImpl<$Res, $Val extends Config>
           ? _value.zhHant
           : zhHant // ignore: cast_nullable_to_non_nullable
               as bool,
-      customAvataar: null == customAvataar
-          ? _value.customAvataar
-          : customAvataar // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -122,8 +115,7 @@ abstract class _$$ConfigImplCopyWith<$Res> implements $ConfigCopyWith<$Res> {
       int colorSeed,
       bool fixedSequence,
       bool showImage,
-      bool zhHant,
-      String customAvataar});
+      bool zhHant});
 }
 
 /// @nodoc
@@ -146,7 +138,6 @@ class __$$ConfigImplCopyWithImpl<$Res>
     Object? fixedSequence = null,
     Object? showImage = null,
     Object? zhHant = null,
-    Object? customAvataar = null,
   }) {
     return _then(_$ConfigImpl(
       autoDarkMode: null == autoDarkMode
@@ -177,10 +168,6 @@ class __$$ConfigImplCopyWithImpl<$Res>
           ? _value.zhHant
           : zhHant // ignore: cast_nullable_to_non_nullable
               as bool,
-      customAvataar: null == customAvataar
-          ? _value.customAvataar
-          : customAvataar // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -195,8 +182,7 @@ class _$ConfigImpl extends _Config {
       this.colorSeed = 0xFFF44336,
       this.fixedSequence = false,
       this.showImage = false,
-      this.zhHant = false,
-      this.customAvataar = ""})
+      this.zhHant = false})
       : super._();
 
   @override
@@ -220,13 +206,10 @@ class _$ConfigImpl extends _Config {
   @override
   @JsonKey()
   final bool zhHant;
-  @override
-  @JsonKey()
-  final String customAvataar;
 
   @override
   String toString() {
-    return 'Config(autoDarkMode: $autoDarkMode, isDarkMode: $isDarkMode, dynamicColor: $dynamicColor, colorSeed: $colorSeed, fixedSequence: $fixedSequence, showImage: $showImage, zhHant: $zhHant, customAvataar: $customAvataar)';
+    return 'Config(autoDarkMode: $autoDarkMode, isDarkMode: $isDarkMode, dynamicColor: $dynamicColor, colorSeed: $colorSeed, fixedSequence: $fixedSequence, showImage: $showImage, zhHant: $zhHant)';
   }
 
   @override
@@ -246,14 +229,12 @@ class _$ConfigImpl extends _Config {
                 other.fixedSequence == fixedSequence) &&
             (identical(other.showImage, showImage) ||
                 other.showImage == showImage) &&
-            (identical(other.zhHant, zhHant) || other.zhHant == zhHant) &&
-            (identical(other.customAvataar, customAvataar) ||
-                other.customAvataar == customAvataar));
+            (identical(other.zhHant, zhHant) || other.zhHant == zhHant));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, autoDarkMode, isDarkMode,
-      dynamicColor, colorSeed, fixedSequence, showImage, zhHant, customAvataar);
+      dynamicColor, colorSeed, fixedSequence, showImage, zhHant);
 
   /// Create a copy of Config
   /// with the given fields replaced by the non-null parameter values.
@@ -272,8 +253,7 @@ abstract class _Config extends Config {
       final int colorSeed,
       final bool fixedSequence,
       final bool showImage,
-      final bool zhHant,
-      final String customAvataar}) = _$ConfigImpl;
+      final bool zhHant}) = _$ConfigImpl;
   const _Config._() : super._();
 
   @override
@@ -290,8 +270,6 @@ abstract class _Config extends Config {
   bool get showImage;
   @override
   bool get zhHant;
-  @override
-  String get customAvataar;
 
   /// Create a copy of Config
   /// with the given fields replaced by the non-null parameter values.
