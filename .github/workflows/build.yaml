@@ -37,20 +37,20 @@ jobs:
             artifact_path: |
               build/linux/*.deb
               build/linux/*.tar.gz
-          # - target: iOS
-          #   os: macos-latest
-          #   cache_pod_key: ios-pods
-          #   cache_pod_path: ios/Pods
-          #   cache_pod_restore_keys_hash_file: ios/Podfile.lock
-          #   artifact_name: release-iOS
-          #   artifact_path: build/**/*.ipa
-          # - target: MacOS
-          #   os: macos-latest
-          #   cache_pod_key: macos-pods
-          #   cache_pod_path: macos/Pods
-          #   cache_pod_restore_keys_hash_file: macos/Podfile.lock
-          #   artifact_name: release-MacOS
-          #   artifact_path: /Users/runner/work/Honzuki/Honzuki/*.dmg
+          - target: iOS
+            os: macos-latest
+            cache_pod_key: ios-pods
+            cache_pod_path: ios/Pods
+            cache_pod_restore_keys_hash_file: ios/Podfile.lock
+            artifact_name: release-iOS
+            artifact_path: build/**/*.ipa
+          - target: MacOS
+            os: macos-latest
+            cache_pod_key: macos-pods
+            cache_pod_path: macos/Pods
+            cache_pod_restore_keys_hash_file: macos/Podfile.lock
+            artifact_name: release-MacOS
+            artifact_path: /Users/runner/work/Honzuki/Honzuki/*.dmg
     outputs:
       version: ${{ steps.get_version.outputs.version }}
       date: ${{ steps.get_version.outputs.date}}
@@ -77,14 +77,14 @@ jobs:
           channel: "stable"
           cache: true
 
-      # # Cache Pod
-      # - name: Cache Pod
-      #   if: matrix.cache_pod_key != null
-      #   uses: actions/cache@v4
-      #   with:
-      #     key: ${{ matrix.cache_pod_key }}
-      #     path: ${{ matrix.cache_pod_path }}
-      #     restore-keys: ${{ matrix.cache_key }}-${{ hashFiles(matrix.cache_pod_restore_keys_hash_file)}}
+      # Cache Pod
+      - name: Cache Pod
+        if: matrix.cache_pod_key != null
+        uses: actions/cache@v4
+        with:
+          key: ${{ matrix.cache_pod_key }}
+          path: ${{ matrix.cache_pod_path }}
+          restore-keys: ${{ matrix.cache_key }}-${{ hashFiles(matrix.cache_pod_restore_keys_hash_file)}}
 
       # Setup JDK
       - name: Setup JDK 21 (Android)
@@ -95,10 +95,10 @@ jobs:
           java-version: "21"
           cache: gradle
 
-      # # Xcodebuild
-      # - name: Build Xcode
-      #   if: matrix.os == 'macos-latest'
-      #   run: xcodebuild -resolvePackageDependencies -workspace ios/Runner.xcworkspace -scheme Runner -configuration Release
+      # Xcodebuild
+      - name: Build Xcode
+        if: matrix.os == 'macos-latest'
+        run: xcodebuild -resolvePackageDependencies -workspace ios/Runner.xcworkspace -scheme Runner -configuration Release
 
       # Flutter Pub Get
       - name: Flutter Pub Get
@@ -124,29 +124,29 @@ jobs:
           mv app-armeabi-v7a-release.apk Honzuki-${{ steps.get_version.outputs.version }}-android-armeabi-v7a.apk
           mv app-x86_64-release.apk Honzuki-${{ steps.get_version.outputs.version }}-android-x86_64.apk
 
-      # # Build iOS .ipa
-      # - name: Build iOS
-      #   if: matrix.target == 'iOS'
-      #   run: |
-      #     cd ios
-      #     pod update
-      #     cd ..
-      #     flutter build ios --release --no-codesign
-      #     sh assets/ios/thin_payload.sh build/ios/iphoneos/*.app
-      #     cd build
-      #     mkdir -p Payload
-      #     mv ios/iphoneos/*.app Payload
-      #     zip -9 Honzuki-${{ steps.get_version.outputs.version }}-ios.ipa -r Payload
+      # Build iOS .ipa
+      - name: Build iOS
+        if: matrix.target == 'iOS'
+        run: |
+          cd ios
+          pod update
+          cd ..
+          flutter build ios --release --no-codesign
+          sh assets/ios/thin_payload.sh build/ios/iphoneos/*.app
+          cd build
+          mkdir -p Payload
+          mv ios/iphoneos/*.app Payload
+          zip -9 Honzuki-${{ steps.get_version.outputs.version }}-ios.ipa -r Payload
 
-      # # Build MacOS .dmg
-      # - name: Build MacOS
-      #   if: matrix.target == 'MacOS'
-      #   run: |
-      #     cd macos
-      #     pod update
-      #     cd ..
-      #     flutter build macos --release
-      #     hdiutil create -format UDZO -srcfolder build/macos/Build/Products/Release/honzuki.app -volname Honzuki-${{ steps.get_version.outputs.version }}-macos Honzuki-${{ steps.get_version.outputs.version }}-macos.dmg
+      # Build MacOS .dmg
+      - name: Build MacOS
+        if: matrix.target == 'MacOS'
+        run: |
+          cd macos
+          pod update
+          cd ..
+          flutter build macos --release
+          hdiutil create -format UDZO -srcfolder build/macos/Build/Products/Release/honzuki.app -volname Honzuki-${{ steps.get_version.outputs.version }}-macos Honzuki-${{ steps.get_version.outputs.version }}-macos.dmg
 
       # Build Windows .zip
       - name: Build Windows
