@@ -12,6 +12,7 @@ A light novel reader for wenku8.net
 - [x] Search for books and authors
 - [x] Book details
 - [x] Book reading
+- [x] Traditional Chinese
 - [x] Reading themes
 - [x] Reading fonts
 - [x] Table of contents related features

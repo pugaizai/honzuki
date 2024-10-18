@@ -112,13 +112,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ),
                         onPressed: () async {
                           final completer = Completer();
-                          Show.loading(completer, context: context);
+                          final hideLoadingFn = Show.loading(context: context);
                           var res = await API.login(
                               usernameController.text, passwordController.text);
                           Log.d(res);
                           Future.delayed(const Duration(milliseconds: 500))
                               .then((_) {
                             completer.complete();
+                            hideLoadingFn?.call();
                             if (res) {
                               sp.setString("username", usernameController.text);
                               sp.setString("password", passwordController.text);

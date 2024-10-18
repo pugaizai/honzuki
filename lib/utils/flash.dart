@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flash/flash.dart';
 import 'package:flash/flash_helper.dart';
 import 'package:flutter/material.dart';
@@ -66,10 +64,17 @@ class Show {
         textColor: colorScheme.onTertiary);
   }
 
-  static loading(Completer dissmissCompleter, {BuildContext? context}) {
-    (context ?? NavigationService.navigatorKey.currentContext)?.showBlockDialog(
-        dismissCompleter: dissmissCompleter,
-        barrierColor: Colors.white.withOpacity(0.7));
+  static Future<void> Function()? loading({BuildContext? context}) {
+    final dialogContext =
+        context ?? NavigationService.navigatorKey.currentContext;
+    if (dialogContext == null) return null;
+
+    dialogContext.showBlockDialog(barrierColor: Colors.white.withOpacity(0.7));
+    return () async => hideLoading(dialogContext);
+  }
+
+  static void hideLoading(BuildContext context) {
+    Navigator.of(context).pop();
   }
 
   static pannel(
