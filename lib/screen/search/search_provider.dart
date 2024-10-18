@@ -44,7 +44,7 @@ class SearchNotifier extends AutoDisposeNotifier<Search> {
 
   _search(String key, searchFunc) async {
     List<String> bookAidList = [];
-    XmlDocument? res = await searchFunc(key);
+    XmlDocument? res = await searchFunc(key, ref);
     if (res != null) {
       res.findAllElements("item").forEach((element) {
         bookAidList.add(element.getAttribute("aid")!);
