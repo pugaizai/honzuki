@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:ui';
+import 'package:gbk_codec/gbk_codec.dart';
 
 class Util {
   static getCover(String aid) {
@@ -16,5 +17,10 @@ class Util {
 
   static isDesktop() {
     return Platform.isLinux || Platform.isMacOS || Platform.isWindows;
+  }
+
+  static Future<String> encodeToGBK(String text) async {
+    List<int> gbkBytes = gbk.encode(text);
+    return Uri.encodeComponent(String.fromCharCodes(gbkBytes));
   }
 }

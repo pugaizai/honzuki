@@ -146,7 +146,7 @@ jobs:
           pod update
           cd ..
           flutter build macos --release
-          hdiutil create -format UDZO -srcfolder build/macos/Build/Products/Release/honzuki.app -volname Honzuki-${{ steps.get_version.outputs.version }}-macos Honzuki-${{ steps.get_version.outputs.version }}-macos.dmg
+          hdiutil create -format UDZO -srcfolder build/macos/Build/Products/Release/honzuki.app -volname Honzuki Honzuki-${{ steps.get_version.outputs.version }}-macos-universal.dmg
 
       # Build Windows .zip
       - name: Build Windows
@@ -243,8 +243,8 @@ jobs:
           mkdir -p /tmp/artifacts/final
           mv /tmp/artifacts/release-Android/*.apk /tmp/artifacts/final/
           mv /tmp/artifacts/release-Windows/*.zip /tmp/artifacts/final/
-          # mv /tmp/artifacts/release-MacOS/*.dmg /tmp/artifacts/final/
-          # mv /tmp/artifacts/release-iOS/*.ipa /tmp/artifacts/final/
+          mv /tmp/artifacts/release-MacOS/*.dmg /tmp/artifacts/final/
+          mv /tmp/artifacts/release-iOS/*.ipa /tmp/artifacts/final/
           mv /tmp/artifacts/release-Linux/*.deb /tmp/artifacts/final/
           mv /tmp/artifacts/release-Linux/*.tar.gz /tmp/artifacts/final/
 

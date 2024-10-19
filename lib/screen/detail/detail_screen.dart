@@ -9,7 +9,6 @@ import 'package:honzuki/providers/download_provider.dart';
 import 'package:honzuki/screen/detail/detail_provider.dart';
 import 'package:honzuki/screen/home/home_provider.dart';
 import 'package:honzuki/theme/extend.dart';
-import 'package:honzuki/utils/flash.dart';
 
 class DetailScreen extends StatefulHookConsumerWidget {
   const DetailScreen(this.bookItem, {super.key});
@@ -215,29 +214,6 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () {
-                            Show.error("尚未开放此功能");
-                          },
-                          child: Column(children: [
-                            Icon(
-                              Icons.share,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 4),
-                              child: Text(
-                                "分享本书",
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .secondary),
-                              ),
-                            )
-                          ]),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () {
                             ref.read(provider.notifier).download(bookItem.aid);
                           },
                           child: Column(children: [
@@ -349,7 +325,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
                 },
                 label: AnimatedContainer(
                   duration: const Duration(milliseconds: 180),
-                  width: showExtendFab.value ? 94 : 24,
+                  width: showExtendFab.value ? 100 : 24,
                   child: showExtendFab.value
                       ? Row(
                           children: [

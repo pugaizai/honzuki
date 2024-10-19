@@ -119,7 +119,7 @@ class RankNotifier extends AutoDisposeFamilyNotifier<Rank, String> {
   }
 
   _getBooks() async {
-    var res = await API.getNovelList(state.sortFlag, page, ref);
+    XmlDocument? res = await API.getNovelList(state.sortFlag, page, ref);
     if (res != null) {
       var books = _parseBook(res);
       state = state.copyWith(books: [...state.books, ...books]);
