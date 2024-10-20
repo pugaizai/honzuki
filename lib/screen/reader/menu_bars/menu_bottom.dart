@@ -57,7 +57,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                         //     .read(readerMenuStateProvider.notifier)
                         //     .toggleBottomAndTop();
                       },
-                      icon: Icon(Icons.menu)),
+                      icon: Icon(Icons.menu_outlined)),
                 )),
                 Flexible(
                     child: Center(
@@ -74,7 +74,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                             menuTextVisible: false,
                             menuConfigVisible: false);
                       },
-                      icon: Icon(Icons.palette)),
+                      icon: Icon(Icons.palette_outlined)),
                 )),
                 Flexible(
                     child: Center(
@@ -91,7 +91,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                                 .menuTextVisible,
                             menuConfigVisible: false);
                       },
-                      icon: Icon(Icons.font_download)),
+                      icon: Icon(Icons.font_download_outlined)),
                 )),
                 Flexible(
                     child: Center(
@@ -108,7 +108,7 @@ class _MenuBottomState extends ConsumerState<MenuBottom>
                                 .read(readerMenuStateProvider)
                                 .menuConfigVisible);
                       },
-                      icon: Icon(Icons.settings)),
+                      icon: Icon(Icons.settings_outlined)),
                 )),
               ])
             ],

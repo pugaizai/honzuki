@@ -14,6 +14,7 @@ import 'package:honzuki/screen/reader/themes/glacier.dart';
 import 'package:honzuki/screen/reader/themes/mulberry.dart';
 import 'package:honzuki/screen/reader/themes/spring.dart';
 import 'package:honzuki/screen/reader/themes/walnut.dart';
+import 'package:honzuki/screen/reader/themes/dark.dart';
 import 'package:honzuki/utils/flash.dart';
 import 'package:honzuki/utils/log.dart';
 import 'package:honzuki/utils/render.dart';
@@ -685,6 +686,7 @@ final List<ReaderTheme> readerThemes = [
   ReaderTheme(name: '冰川', id: "glacier", theme: glacierTheme),
   ReaderTheme(name: '樱桃', id: "cherry", theme: cherryTheme),
   ReaderTheme(name: '胡桃', id: "walnut", theme: walnutTheme),
+  ReaderTheme(name: '暗夜', id: "dark", theme: darkTheme),
 ];
 
 final loadingProvider = StateProvider.autoDispose<bool>((ref) {
